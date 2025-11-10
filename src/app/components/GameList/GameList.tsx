@@ -1,10 +1,17 @@
 'use client';
 
-import { useGetGamesQuery } from "components/app/store/api/rawg-api";
+import { useGetGamesQuery, useGetInfiniteGamesQuery } from "components/app/store/api/rawg-api";
 import { Card, Row, Col, Spin } from 'antd';
+import { useState } from "react";
 
 export const GameList = () => {
-    const { data, error, isLoading } = useGetGamesQuery({ page: 1, pageSize: 12 });
+    const [page, setPage] = useState(1);
+    /* const { data, error, isLoading } = useGetGamesQuery({ page: 1, pageSize: 12 }); */
+    const { data, error, isLoading } = useGetInfiniteGamesQuery({ page });
+
+    const loadMore = () => {
+        setPage(prev => prev + 1);
+    };
 
     if(isLoading) return <Spin size="large"/>;
     if (error) return <div>An error has occurred!</div>;
@@ -23,6 +30,13 @@ export const GameList = () => {
                     </Card>
                 </Col>
                 ))}
+
+                <button 
+                    onClick={loadMore} 
+                    disabled={isLoading}
+                >
+                    {isLoading ? 'Loading...' : 'Load More'}
+                </button>
             </Row>
         </div>
     )

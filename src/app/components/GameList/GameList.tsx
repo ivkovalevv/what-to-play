@@ -16,10 +16,10 @@ export const GameList = () => {
                 {data?.results.map((game) => (
                 <Col key={game.id} xs={24} sm={12} md={8} lg={6}>
                     <Card
-                    hoverable
-                    cover={<img alt={game.name} src={game.background_image} style={{ height: 200, objectFit: 'cover' }} />}
+                        hoverable
+                        cover={<img alt={game.name} src={game.background_image} style={{ height: 200, objectFit: 'cover' }} />}
                     >
-                    <Card.Meta title={game.name} description={`Released: ${game.released} | Rating: ${game.rating}`} />
+                        <Card.Meta title={game.name} description={`Released: ${game.released} | Rating: ${game.rating}`} />
                     </Card>
                 </Col>
                 ))}

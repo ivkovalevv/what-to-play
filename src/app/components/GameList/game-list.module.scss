@@ -1,0 +1,8 @@
+.card{
+    background-color: transparent;
+    border: none;
+
+    &-title *{
+        color: #FFF !important;
+    }
+}

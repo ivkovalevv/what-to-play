@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    margin-right: 150px;
+}
+
+.logo{
+    max-width: 55px;
+    max-height: 55px;
+    margin-right: 10px;
+}
+
+.heading{
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    transform: translateY(2px);
+    text-wrap: nowrap;
+    margin-right: 10px;
+}

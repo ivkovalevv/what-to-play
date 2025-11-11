@@ -1,10 +1,14 @@
 import { GameList } from "./components/GameList/GameList";
+import Header from "./components/Header/Header";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main>
-      <h1>Welcome to What To Play!</h1>
+      <Header></Header>
+      <video autoPlay loop muted controls={false} className="main-background-video">
+        <source src="/assets/video/main-background.mp4" type="video/mp4"/>
+      </video>
       <GameList/>
     </main>
   );

@@ -1,8 +1,43 @@
+.heading{
+    font-size: 32px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
 .card{
     background-color: transparent;
     border: none;
+    overflow: hidden;
+    transition: transform .2s ease;
 
     &-title *{
         color: #FFF !important;
+    }
+
+    :global(.ant-card-body) {
+        padding: 18px 0px;
+    }
+    
+    :global(.ant-card-meta-title) {
+        font-size: 20px;
+        display: flex;
+    }
+
+    :global(.ant-card-cover) {
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    &:hover{
+        box-shadow: none !important;
+        transform: scale(0.98);
+    }
+
+    &__star{
+        margin-left: auto;
+    }
+
+    &__star *{
+        color: rgb(219 196 20) !important;
     }
 }

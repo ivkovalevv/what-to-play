@@ -5,9 +5,15 @@
 
 :root{
     --font-stack-sans: "Stack Sans Text", sans-serif;;
-    --background-color: rgb(3,1,16);
-    --primary-color: #7700ff;
+    --background-color: #0f0f0f;
+    --glass-background-color: #ffffff17; 
+    --primary-color: #8419ff;
     --primary-hover-color: #9242ee;
+    --white-color: #ffffff;
+    --white-ghost-color: #ffffff79;
+    --text-color: #dddddd;
+    --text-ghost-color: #cfcfcf;
+    --border-color: #ffffff4d;
 }
 
 *{
@@ -17,7 +23,7 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    color: #dddddd;
+    color: var(--text-color);
 }
 
 body {

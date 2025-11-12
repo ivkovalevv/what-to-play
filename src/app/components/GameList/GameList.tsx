@@ -2,6 +2,7 @@
 
 import { useGetGamesQuery, useGetInfiniteGamesQuery } from "components/app/store/api/rawg-api";
 import { Card, Row, Col, Spin, Typography } from 'antd';
+import { StarFilled } from '@ant-design/icons';
 import { useState } from "react";
 import styles from "./game-list.module.scss";
 
@@ -21,7 +22,7 @@ export const GameList = () => {
 
     return (
         <div className="container">
-            <h2>Popular Games</h2>
+            <h2 className={styles.heading}>Popular Games</h2>
             <Row gutter={[16, 16]}>
                 {data?.results.map((game) => (
                 <Col key={game.id} xs={24} sm={12} md={8} lg={6}>
@@ -30,7 +31,15 @@ export const GameList = () => {
                         hoverable
                         cover={<img alt={game.name} src={game.background_image} style={{ height: 280, objectFit: 'cover' }} />}
                     >
-                        <Card.Meta className={styles['card-title']} title={game.name} description={`Released: ${game.released} | Rating: ${game.rating}`} />
+                        <Card.Meta 
+                            className={styles['card-title']} 
+                            title={game.name} 
+                            description={
+                                <>
+                                    {`Released: ${game.released} | `}
+                                    <StarFilled className={styles.card__star} /> {game.rating}
+                                </>
+                                } />
                     </Card>
                 </Col>
                 ))}

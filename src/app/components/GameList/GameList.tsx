@@ -21,36 +21,38 @@ export const GameList = () => {
     if (error) return <Text type="danger">An error has occurred!</Text>;
 
     return (
-        <div className="container">
-            <h2 className={styles.heading}>Popular Games</h2>
-            <Row gutter={[16, 16]}>
-                {data?.results.map((game) => (
-                <Col key={game.id} xs={24} sm={12} md={8} lg={6}>
-                    <Card
-                        className={styles.card}
-                        hoverable
-                        cover={<img alt={game.name} src={game.background_image} style={{ height: 280, objectFit: 'cover' }} />}
-                    >
-                        <Card.Meta 
-                            className={styles['card-title']} 
-                            title={game.name} 
-                            description={
-                                <>
-                                    {`Released: ${game.released} | `}
-                                    <StarFilled className={styles.card__star} /> {game.rating}
-                                </>
-                                } />
-                    </Card>
-                </Col>
-                ))}
+        <section className={styles.popular}>
+            <div className="container">
+                <h2 className={styles.heading}>Popular Games</h2>
+                <Row gutter={[16, 16]}>
+                    {data?.results.map((game) => (
+                    <Col key={game.id} xs={24} sm={12} md={8} lg={6}>
+                        <Card
+                            className={styles.card}
+                            hoverable
+                            cover={<img alt={game.name} src={game.background_image} style={{ height: 280, objectFit: 'cover' }} />}
+                        >
+                            <Card.Meta 
+                                className={styles['card-title']} 
+                                title={game.name} 
+                                description={
+                                    <>
+                                        {`Released: ${game.released.split('-').reverse().join('.')} | `}
+                                        <StarFilled className={styles.card__star} /> {game.rating}
+                                    </>
+                                    } />
+                        </Card>
+                    </Col>
+                    ))}
 
-                <button 
-                    onClick={loadMore} 
-                    disabled={isLoading}
-                >
-                    {isLoading ? 'Loading...' : 'Load More'}
-                </button>
-            </Row>
-        </div>
+                    <button 
+                        onClick={loadMore} 
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Loading...' : 'Load More'}
+                    </button>
+                </Row>
+            </div>
+        </section>
     )
 }

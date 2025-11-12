@@ -1,6 +1,11 @@
+.popular{
+    width: 100%;
+    background-color: var(--background-color);
+    padding-top: 80px;
+}
+
 .heading{
     font-size: 32px;
-    margin-top: 80px;
     margin-bottom: 30px;
 }
 
@@ -31,6 +36,7 @@
     &:hover{
         box-shadow: none !important;
         transform: scale(0.98);
+        cursor: url('/assets/images/cursor-pointer.png'), pointer;
     }
 
     &__star{

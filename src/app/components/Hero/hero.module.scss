@@ -1,0 +1,71 @@
+.hero{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        transform: rotate(180deg);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.594812) 6.67%, rgba(0, 0, 0, 0.578694) 13.33%, rgba(0, 0, 0, 0.551004) 20%, rgba(0, 0, 0, 0.511553) 26.67%, rgba(0, 0, 0, 0.460935) 33.33%, rgba(0, 0, 0, 0.40087) 40%, rgba(0, 0, 0, 0.334385) 46.67%, rgba(0, 0, 0, 0.265615) 53.33%, rgba(0, 0, 0, 0.19913) 60%, rgba(0, 0, 0, 0.139065) 66.67%, rgba(0, 0, 0, 0.0884468) 73.33%, rgba(0, 0, 0, 0.0489959) 80%, rgba(0, 0, 0, 0.021306) 86.67%, rgba(0, 0, 0, 0.00518832) 93.33%, rgba(0, 0, 0, 0));
+    }
+
+    &__background_video{
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed;
+        margin: 0 auto;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(80%);
+    }
+
+    &__сontainer{
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__intro{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        color: #adadad !important;
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+    }
+
+    &__title{
+        font-family: "Stack Sans Notch", sans-serif !important;
+        font-weight: 400;
+        color: #FFF !important;
+        font-size: 98px !important;
+        line-height: 1 !important;
+        margin: 15px 0px 30px !important;
+    }
+
+    &__description{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        color: #cfcfcf !important;
+        font-size: 24px !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 425px){
+    .hero{
+        max-height: 700px;
+    }
+}

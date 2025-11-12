@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <div className={styles['header-container']}>
+            <div className={styles.header__container}>
                 <Logo/>
                 {/* <Input className={styles['header-search']} size="large" placeholder="Limbo..." prefix={<SearchOutlined className={styles['header-search-icon']}/>} /> */}
                 {/* <SearchOutlined className={styles['header-search-icon']}/> */}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
 
 .wrapper{
     display: flex;
@@ -13,10 +13,48 @@
 }
 
 .heading{
-    font-family: "Special Gothic Expanded One", sans-serif;
+    display: flex;
+    align-items: center;
+    font-family: "Special Gothic Expanded One", sans-serif !important;
     font-size: 28px;
     font-weight: 500;
     transform: translateY(2px);
     text-wrap: nowrap;
+    margin: 0px;
     margin-right: 10px;
+}
+
+.plusWrapper{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transition: transform .3s ease;
+    transform-origin: center center;
+    animation: logo-animation 12s ease infinite;
+}
+
+.plus{
+    width: 100%;
+    text-align: center;
+    transform: translateY(1px);
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 0.4;
+    color: #7700ff;
+    margin-bottom: 0px;
+}
+
+@keyframes logo-animation{
+    0% {
+        transform: rotate(0deg);
+    }
+    16% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

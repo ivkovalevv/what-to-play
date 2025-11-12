@@ -7,7 +7,7 @@
     left: 0px;
     background: linear-gradient(180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .594812) 6.67%, rgba(0, 0, 0, .578694) 13.33%, rgba(0, 0, 0, .551004) 20%, rgba(0, 0, 0, .511553) 26.67%, rgba(0, 0, 0, .460935) 33.33%, rgba(0, 0, 0, .40087) 40%, rgba(0, 0, 0, .334385) 46.67%, rgba(0, 0, 0, .265615) 53.33%, rgba(0, 0, 0, .19913) 60%, rgba(0, 0, 0, .139065) 66.67%, rgba(0, 0, 0, .0884468) 73.33%, rgba(0, 0, 0, .0489959) 80%, rgba(0, 0, 0, .021306) 86.67%, rgba(0, 0, 0, .00518832) 93.33%, rgba(0, 0, 0, 0));
 
-    &-container{
+    &__container{
         max-width: 1740px;
         width: 91%;
         height: 100%;
@@ -17,14 +17,14 @@
         justify-content: space-between;
     }
 
-    &-search{
+    &__search{
         max-width: 400px;
         background-color: rgba(255, 255, 255, 0.315);
         border: 1px solid transparent;
         margin-right: auto;
     }
 
-    &-search-icon svg{
+    &__search_icon svg{
         width: 20px;
         height: 20px;
         fill: #FFF;

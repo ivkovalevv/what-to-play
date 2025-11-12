@@ -28,7 +28,7 @@ export const GameList = () => {
                     <Card
                         className={styles.card}
                         hoverable
-                        cover={<img alt={game.name} src={game.background_image} style={{ height: 200, objectFit: 'cover' }} />}
+                        cover={<img alt={game.name} src={game.background_image} style={{ height: 280, objectFit: 'cover' }} />}
                     >
                         <Card.Meta className={styles['card-title']} title={game.name} description={`Released: ${game.released} | Rating: ${game.rating}`} />
                     </Card>

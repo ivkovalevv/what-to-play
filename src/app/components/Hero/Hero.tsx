@@ -1,7 +1,7 @@
 'use client';
 
 import styles from "./hero.module.scss";
-import { Typography } from 'antd';
+import { Typography, Button } from 'antd';
 
 const Hero = () => {
     const { Title } = Typography;
@@ -13,10 +13,11 @@ const Hero = () => {
                 <source src="/assets/video/background-video.mp4" type="video/mp4"/>
             </video>
             <div className={`container ${styles.hero__сontainer}`}>
-                {<div>
+                {<div className={styles.hero__сontent}>
                     <Text className={styles.hero__intro}>BEST GAME STORE</Text>
                     <Title className={styles.hero__title} level={1}>Your Next Game is Here</Title>
-                    <Text className={styles.hero__description}>Find your perfect match. Compare the ratings.<br/> Make a decision in a matter of seconds.</Text>    
+                    <Text className={styles.hero__description}>Find your perfect match. Compare the ratings.<br/> Make a decision in a matter of seconds.</Text>
+                    <Button className={styles.hero__button}>Get Started</Button>
                 </div>}
             </div>
         </section>

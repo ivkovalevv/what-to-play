@@ -1,0 +1,49 @@
+.popular{
+    width: 100%;
+    background-color: var(--background-color);
+    padding-top: 80px;
+}
+
+.heading{
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.card{
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    transition: transform .2s ease;
+
+    &-title *{
+        color: #FFF !important;
+    }
+
+    :global(.ant-card-body) {
+        padding: 18px 0px;
+    }
+    
+    :global(.ant-card-meta-title) {
+        font-size: 20px;
+        display: flex;
+    }
+
+    :global(.ant-card-cover) {
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    &:hover{
+        box-shadow: none !important;
+        transform: scale(0.98);
+        cursor: url('/assets/images/cursor-pointer.png'), pointer;
+    }
+
+    &__star{
+        margin-left: auto;
+    }
+
+    &__star *{
+        color: rgb(219 196 20) !important;
+    }
+}

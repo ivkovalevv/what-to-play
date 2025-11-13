@@ -1,0 +1,35 @@
+.profile{
+    &__link{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &_icon{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.5714285714285714;
+            list-style: none;
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: center;
+            vertical-align: middle;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid transparent;
+            border-radius: 50%;
+        }
+
+        &_name{
+            font-family: 'Noto Sans', 'Noto Sans Fallback' !important;
+            font-size: 14px !important;
+            color: #FFF;
+            margin-left: 8px;
+        }
+    }   
+}

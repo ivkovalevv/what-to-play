@@ -2,27 +2,39 @@
 
 import { Flex, Input, Button } from "antd";
 import { UserOutlined, LockOutlined, LoadingOutlined } from '@ant-design/icons';
-import { useState, useRef } from "react";
+import { useState } from "react";
 import emailjs from '@emailjs/browser'
 import styles from "./auth-form.module.scss"
 import Image from "next/image";
 
 const AuthForm = () => {
     const [isFormInvalid, setIsFormInvalid] = useState('');
+    const [isLodaing, setIsLoading] = useState(false);
     const [email, setEmail] = useState('');
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>){
         const { value } = e.target;
         setEmail(value.trim().toLowerCase());
+        setIsFormInvalid('');
     };
 
-    const form = useRef<HTMLFormElement>(null)
+    const validateEmail = (email: string) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return regex.test(email);
+    }
 
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault()
         console.log('сообщение отправляется')
 
-        if (!email) return
+        if (!email) return;
+
+        if (!validateEmail(email)) {
+            setIsFormInvalid('Please enter a valid email address');
+            return;
+        }
+
+        setIsLoading(true)
 
         emailjs
         .send(
@@ -31,18 +43,21 @@ const AuthForm = () => {
             {
                 to_email: email,
                 user_email: 'ivkovalevv@gmail.com',
-                message: 'Authorization request'
+                message: 'Authorization request',
+                password: 'PASS'
             },
             '6xewHig9R5Uzd5OeD'      // Public Key
         )
         .then(
             (result) => {
-            console.log('SUCCESS!', result.text)
-            alert('Сообщение отправлено!')
+                console.log('SUCCESS!', result.text)
+                setIsLoading(false)
+                alert('Сообщение отправлено!')
             },
             (error) => {
-            console.log('FAILED...', error)
-            alert('Ошибка отправки!')
+                console.log('FAILED...', error)
+                setIsLoading(false)
+                alert('Ошибка отправки!')
             }
         )
     }
@@ -80,13 +95,13 @@ const AuthForm = () => {
                             onChange={handleChange}
                             className={styles.form__input}/>
                         {isFormInvalid && (
-                            <p className="input-invalid">
+                            <p className={styles.form__input_invalid}>
                                 {isFormInvalid}
                             </p>
                         )}
                     </div>
-                    <Button size='large' type="primary" disabled={!email} htmlType="submit" className={styles.form__button}>
-                        {/* <LoadingOutlined className="loading-icon"/>  */} Next
+                    <Button size='large' type="primary" disabled={!email || isFormInvalid !== ''} htmlType="submit" className={styles.form__button}>
+                        {isLodaing ? <LoadingOutlined className="loading-icon"/> : 'Next'}
                     </Button>
                 </Flex>
             </form>

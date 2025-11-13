@@ -42,6 +42,12 @@
         }
     }
 
+    &__input_invalid{
+        color: red;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
     &__input_icon *{
         color: var(--light-grey-color);
         font-size: 18px;

@@ -6,11 +6,13 @@ import { useState } from "react";
 import emailjs from '@emailjs/browser'
 import styles from "./auth-form.module.scss"
 import Image from "next/image";
+import { generateRandomPassword } from "components/utils/functions";
 
 const AuthForm = () => {
     const [isFormInvalid, setIsFormInvalid] = useState('');
     const [isLodaing, setIsLoading] = useState(false);
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>){
         const { value } = e.target;
@@ -24,8 +26,7 @@ const AuthForm = () => {
     }
 
     const sendEmail = (e: React.FormEvent) => {
-        e.preventDefault()
-        console.log('сообщение отправляется')
+        e.preventDefault();
 
         if (!email) return;
 
@@ -34,24 +35,28 @@ const AuthForm = () => {
             return;
         }
 
-        setIsLoading(true)
+        setIsLoading(true);
+
+        const pass = generateRandomPassword();
 
         emailjs
         .send(
-            'service_ivkov',     // Service ID
-            'template_test1',    // Template ID  
+            process.env.NEXT_PUBLIC_SERVICE_ID!,
+            process.env.NEXT_PUBLIC_TEMPLATE_ID!,
             {
                 to_email: email,
-                user_email: 'ivkovalevv@gmail.com',
+                user_email: process.env.NEXT_PUBLIC_EMAILJS_EMAIL!,
                 message: 'Authorization request',
-                password: 'PASS'
+                password: pass
             },
-            '6xewHig9R5Uzd5OeD'      // Public Key
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
         )
         .then(
             (result) => {
                 console.log('SUCCESS!', result.text)
-                setIsLoading(false)
+                setIsLoading(false);
+                setPassword(pass);
+                console.log(password);
                 alert('Сообщение отправлено!')
             },
             (error) => {

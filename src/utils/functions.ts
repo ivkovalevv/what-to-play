@@ -1,8 +1,8 @@
-export const generateRandomPassword = (length = 14, includeUppercase = true, includeNumbers = true, includeSymbols = true) => {
+export const generateRandomPassword = (length = 8, includeUppercase = true, includeNumbers = true, includeSymbols = true) => {
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numberChars = "0123456789";
-  const symbolChars = "!@#$%&*()-_?";
+  const symbolChars = "!@#$%&*-_?";
 
   let availableChars = lowercaseChars;
   if (includeUppercase) availableChars += uppercaseChars;
@@ -16,4 +16,9 @@ export const generateRandomPassword = (length = 14, includeUppercase = true, inc
   }
 
   return password;
+}
+
+export const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return regex.test(email);
 }

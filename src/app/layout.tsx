@@ -22,8 +22,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://unpkg.com/antd@5/dist/reset.css" />
       </head>
       <body className={notoSansFont.className}>
-        <Header/>
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <Header/>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -33,3 +33,23 @@
         }
     }   
 }
+
+.logout_button{
+    background-color: transparent;
+    border: none;
+    padding: none;
+    cursor: pointer;
+}
+
+.space{
+    cursor: pointer;
+}
+
+.dropdown ul{
+    width: 106%;
+    background-color: var(--glass-background-color) !important;
+}
+
+.dropdown li:hover{
+    background-color: var(--glass-background-color) !important;
+}

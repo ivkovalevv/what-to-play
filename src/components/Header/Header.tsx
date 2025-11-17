@@ -2,12 +2,11 @@
 
 import Logo from 'components/UI/Logo/Logo';
 import styles from './header.module.scss';
-import { Input, Typography } from 'antd';
-import { SearchOutlined } from '@ant-design/icons'
 import ProfileLink from 'components/UI/ProfileLink/ProfileLink';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 const Header = () => {
-    const { Text } = Typography;
+    const user = useAppSelector((state) => state.auth.user);
 
     return (
         <header className={styles.header}>
@@ -15,7 +14,7 @@ const Header = () => {
                 <Logo/>
                 {/* <Input className={styles['header-search']} size="large" placeholder="Limbo..." prefix={<SearchOutlined className={styles['header-search-icon']}/>} /> */}
                 {/* <SearchOutlined className={styles['header-search-icon']}/> */}
-                <ProfileLink/>
+                <ProfileLink userName={user?.name} userAvatar={user?.avatar}/>
             </div>
         </header>
     )

@@ -3,8 +3,9 @@ import { Noto_Sans } from "next/font/google";
 import "../styles/globals.scss";
 import { ReduxProvider } from "../providers/redux-provider";
 import Header from "../components/Header/Header";
+import Head from "next/head";
 
-const notoSansFont = Noto_Sans({subsets: ['latin']});
+const notoSansFont = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "What To Play",
@@ -18,12 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link rel="stylesheet" href="https://unpkg.com/antd@5/dist/reset.css" />
-      </head>
+      </Head>
       <body className={notoSansFont.className}>
         <ReduxProvider>
-          <Header/>
+          <Header />
           {children}
         </ReduxProvider>
       </body>

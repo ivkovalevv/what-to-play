@@ -18,13 +18,8 @@
         font-size: 32px;
         color: var(--white-color);
         text-align: center;
-    }
-
-    &__description{
-        font-size: 22px;
-        color: var(--white-color);
-        text-align: center;
         font-weight: 300;
+        margin-bottom: 20px;
     }
 
     &__logo{
@@ -57,7 +52,6 @@
         &:disabled{
             background: red;
         }
-
     }
 
     &__input_invalid{
@@ -113,4 +107,22 @@
 
 .form_wrapper :global(.ant-input-password-icon) *{
     color: var(--light-grey-color) !important;
+}
+
+.form_wrapper :global(.ant-otp-input){
+    min-height: clamp(2.8125rem, 2.5446rem + 1.3393vw, 3.75rem); /* 60px > 45px */
+    font-size: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem) !important; /* 24px > 16px */
+    font-weight: 600;
+
+    &:hover{
+        border-color: var(--primary-color);
+    }
+
+    &:focus-within{
+        border-color: var(--primary-color);
+    }
+
+    &:disabled{
+        background: red;
+    }
 }

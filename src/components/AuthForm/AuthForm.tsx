@@ -10,7 +10,6 @@ import { generateRandomCode, validateEmail } from "components/utils/functions";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { login } from "../../store/slices/authSlice";
 import { useRouter } from "next/navigation";
-import { exitCode } from "process";
 
 const CODE_LENGTH = 6;
 
@@ -129,7 +128,7 @@ const AuthForm = () => {
         alt="logo"
       />
       <p className={styles.form_wrapper__heading}>
-        {exitCode
+        {code
           ? "Check your email address and enter the code you sent"
           : "Enter your email address to continue"}
       </p>

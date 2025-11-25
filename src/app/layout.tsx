@@ -3,6 +3,7 @@ import { Noto_Sans } from "next/font/google";
 import "../styles/globals.scss";
 import { ReduxProvider } from "../providers/redux-provider";
 import Header from "../components/Header/Header";
+import AuthInitializer from "../components/AuthInitializer/AuthInitializer";
 import Head from "next/head";
 
 const notoSansFont = Noto_Sans({ subsets: ["latin"] });
@@ -24,6 +25,7 @@ export default function RootLayout({
       </Head>
       <body className={notoSansFont.className}>
         <ReduxProvider>
+          <AuthInitializer/>
           <Header />
           {children}
         </ReduxProvider>

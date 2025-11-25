@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from "react";
 import styles from './profile-link.module.scss';
 import { Avatar, Typography } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons'
@@ -17,6 +18,11 @@ interface ProfileLinkProps {
 const ProfileLink = (props: ProfileLinkProps) => {
     const { Text } = Typography;
     const dispatch = useAppDispatch();
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     const handleLogout = () => {
         dispatch(logout());
@@ -36,6 +42,15 @@ const ProfileLink = (props: ProfileLinkProps) => {
         icon: <LogoutOutlined />,
     },
     ];
+
+    if (!isMounted) {
+        return (
+            <Link href="/auth" className={styles.profile__link}>
+                <Avatar className={styles.profile__link_icon} size={40} icon={<UserOutlined />} />
+                <Text className={styles.profile__link_name}>Login</Text>
+            </Link>
+        );
+    }
 
     return (
         <>

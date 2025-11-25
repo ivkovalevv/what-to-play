@@ -171,6 +171,7 @@ const AuthForm = () => {
             disabled={
               !formData.email ||
               isEmailInvalid !== "" ||
+              isCodeInvalid !== "" ||
               (formData.email != "" &&
                 code != "" &&
                 formData.code.join("").length < CODE_LENGTH)

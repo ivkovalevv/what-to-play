@@ -12,3 +12,21 @@ $light-grey-color: #6d6d6d;
 $text-color: #dddddd;
 $text-ghost-color: #cfcfcf;
 $border-color: #ffffff4d;
+$hero-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 100%);
+
+/* ============= MIXINS ============= */
+
+@mixin button-base {
+    display: inline-block;
+    color: $white-color;
+    background-color: $primary-color;
+    padding: 21px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: $primary-color;
+    }
+}

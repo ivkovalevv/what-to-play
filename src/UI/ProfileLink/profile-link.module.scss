@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .profile{
     &__link{
         display: flex;
@@ -8,9 +10,9 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            color: #fff;
+            color: $white-color;
             font-size: 14px;
-            line-height: 1.5714285714285714;
+            line-height: 1.5;
             list-style: none;
             position: relative;
             display: inline-flex;
@@ -47,9 +49,9 @@
 
 .dropdown ul{
     width: 106%;
-    background-color: var(--glass-background-color) !important;
+    background-color: $glass-background-color !important;
 }
 
 .dropdown li:hover{
-    background-color: var(--glass-background-color) !important;
+    background-color: $glass-background-color !important;
 }

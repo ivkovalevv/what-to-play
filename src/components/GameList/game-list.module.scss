@@ -1,12 +1,23 @@
+@import "../../styles/variables.scss";
+
 .popular{
     width: 100%;
-    background-color: var(--background-color);
+    background-color: $background-color;
     padding-top: 80px;
 }
 
 .heading{
     font-size: 32px;
     margin-bottom: 30px;
+    width: 100%;
+    text-align: start;
+}
+
+.game_list__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card{
@@ -16,7 +27,7 @@
     transition: transform .2s ease;
 
     &-title *{
-        color: #FFF !important;
+        color: $white-color !important;
     }
 
     :global(.ant-card-body) {
@@ -45,4 +56,10 @@
     &__star *{
         color: rgb(219 196 20) !important;
     }
+}
+
+.button_more{
+    @include button-base;
+    font-size: 18px;
+    margin: 20px 0px;
 }

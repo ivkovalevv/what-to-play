@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .form_wrapper{
     position: relative;
     width: 90%;
@@ -10,13 +12,13 @@
     align-items: center;
     justify-content: center;
     background-color: #25252593;
-    border: 1px solid var(--border-color);
+    border: 1px solid $border-color;
     -webkit-backdrop-filter: blur(13px);
     backdrop-filter: blur(13px);
 
     &__heading{
         font-size: 32px;
-        color: var(--white-color);
+        color: $white-color;
         text-align: center;
         font-weight: 300;
         margin-bottom: 20px;
@@ -42,11 +44,11 @@
         background: #ffffffd5 !important;
 
         &:hover{
-            border-color: var(--primary-color);
+            border-color: $primary-color;
         }
 
         &:focus-within{
-            border-color: var(--primary-color);
+            border-color: $primary-color;
         }
 
         &:disabled{
@@ -61,23 +63,23 @@
     }
 
     &__input_icon *{
-        color: var(--light-grey-color);
+        color: $light-grey-color;
         font-size: 18px;
         margin-inline-end: 4px;
     }
 
     &__button{
         height: 50px;
-        background-color: var(--primary-color);
+        background-color: $primary-color;
         font-size: 20px;
         font-weight: 500;
 
         &:hover{
-            background: var(--primary-hover-color) !important;
+            background: $primary-hover-color !important;
         }
 
         &:active{
-            background: var(--primary-active-color) !important;
+            background: $primary-active-color !important;
         }
 
         &:disabled{
@@ -106,7 +108,7 @@
 }
 
 .form_wrapper :global(.ant-input-password-icon) *{
-    color: var(--light-grey-color) !important;
+    color: $light-grey-color !important;
 }
 
 .form_wrapper :global(.ant-otp-input){
@@ -115,11 +117,11 @@
     font-weight: 600;
 
     &:hover{
-        border-color: var(--primary-color);
+        border-color:$primary-color;
     }
 
     &:focus-within{
-        border-color: var(--primary-color);
+        border-color:$primary-color;
     }
 
     &:disabled{

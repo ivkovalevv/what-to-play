@@ -27,7 +27,7 @@ export const GameList = () => {
 
   return (
     <section className={styles.popular}>
-      <div className="container">
+      <div className={`container ${styles.game_list__container}`}>
         <h2 className={styles.heading}>Popular Games</h2>
         <Row gutter={[16, 16]}>
           {data?.results.map((game) => (
@@ -62,11 +62,10 @@ export const GameList = () => {
               </Link>
             </Col>
           ))}
-
-          <button onClick={loadMore} disabled={isLoading}>
+        </Row>
+        <button onClick={loadMore} disabled={isLoading} className={styles.button_more}>
             {isLoading ? "Loading..." : "Load More"}
           </button>
-        </Row>
       </div>
     </section>
   );

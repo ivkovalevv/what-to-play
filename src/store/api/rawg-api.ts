@@ -36,10 +36,23 @@ export const rawgApi = createApi({
         `games?key=${RAWG_API_KEY}&search=${search}&page=${page}`,
     }),
     getInfiniteGames: builder.query<GamesResponse, { page: number }>({
-      query: ({ page }) => `games?key=${RAWG_API_KEY}&page=${page}`,
-      serializeQueryArgs: ({ endpointName }) => endpointName,
-      merge: (currentCache, newItems) => {
-        currentCache.results.push(...newItems.results);
+      query: ({ page }) => `games?key=${RAWG_API_KEY}&page=${page}&page_size=12`,
+      serializeQueryArgs: ({ endpointName, queryArgs }) => {
+        return endpointName;
+      },
+      merge: (currentCache, newItems, { arg }) => {
+        if (arg.page === 1) {
+          return newItems;
+        } else {
+          if (currentCache.results && newItems.results) {
+            const existingIds = new Set(currentCache.results.map(game => game.id));
+            const uniqueNewGames = newItems.results.filter(game => !existingIds.has(game.id));
+            
+            currentCache.results.push(...uniqueNewGames);
+            currentCache.count = newItems.count;
+          }
+          return currentCache;
+        }
       },
       forceRefetch({ currentArg, previousArg }) {
         return currentArg?.page !== previousArg?.page;

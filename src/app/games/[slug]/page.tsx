@@ -1,19 +1,27 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useGetOneGameQuery } from "../../../store/api/rawg-api";
+import { useGetOneGameQuery, useGetScreenshotsOneGameQuery } from "../../../store/api/rawg-api";
 import Link from "next/link";
 import styles from "./game-page.module.scss";
 
 export default function GamePage() {
   const params = useParams();
-  const { id } = params;
+  const { slug } = params;
 
   const {
     data: game,
     isLoading,
     error,
-  } = useGetOneGameQuery({ id: Number(id) }, { skip: !id });
+  } = useGetOneGameQuery({ slug: String(slug) });
+
+  const { 
+    data: screenshots, 
+    isLoading: isLoadingScreenshots, 
+    error: errorScreenshots,
+  } = useGetScreenshotsOneGameQuery({ slug: String(slug) });
+
+  console.log(screenshots?.results);
 
   if (isLoading)
     return (

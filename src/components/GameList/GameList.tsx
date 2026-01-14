@@ -32,7 +32,7 @@ export const GameList = () => {
         <Row gutter={[16, 16]}>
           {data?.results.map((game) => (
             <Col key={game.id} xs={24} sm={12} md={8} lg={6}>
-              <Link href={`/games/${game.id}`} className={styles.cardLink}>
+              <Link href={`/games/${game.slug}`} className={styles.cardLink}>
                 <Card
                   className={styles.card}
                   hoverable

@@ -8,9 +8,20 @@ export interface GamesResponse {
 export interface Game {
   id: number;
   name: string;
+  slug: string;
   released: string;
   background_image: string;
   rating: number;
+}
+
+export type Screenshot = {
+  id: number;
+  image: string;
+}
+
+export interface Screenshots {
+  count: number;
+  results: Screenshot[];
 }
 
 const RAWG_API_KEY = process.env.NEXT_PUBLIC_RAWG_API_KEY;
@@ -58,8 +69,11 @@ export const rawgApi = createApi({
         return currentArg?.page !== previousArg?.page;
       },
     }),
-    getOneGame: builder.query<Game, { id: number }>({
-      query: ({ id }) => `games/${id}?key=${RAWG_API_KEY}`,
+    getOneGame: builder.query<Game, { slug: string }>({
+      query: ({ slug }) => `games/${slug}?key=${RAWG_API_KEY}`,
+    }),
+    getScreenshotsOneGame: builder.query<Screenshots, { slug: string}>({
+      query: ({ slug }) => `games/${slug}/screenshots?key=${RAWG_API_KEY}`,
     }),
   }),
 });
@@ -69,4 +83,5 @@ export const {
   useSearchGamesQuery,
   useGetInfiniteGamesQuery,
   useGetOneGameQuery,
+  useGetScreenshotsOneGameQuery,
 } = rawgApi;

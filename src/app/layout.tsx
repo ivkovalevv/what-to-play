@@ -4,13 +4,15 @@ import "../styles/globals.scss";
 import { ReduxProvider } from "../providers/redux-provider";
 import Header from "../components/Header/Header";
 import AuthInitializer from "../components/AuthInitializer/AuthInitializer";
-import Head from "next/head";
 
 const notoSansFont = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "What To Play",
   description: "A web application for video game lovers",
+  icons: {
+    icon: "/assets/images/svg/logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -20,9 +22,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="stylesheet" href="https://unpkg.com/antd@5/dist/reset.css" />
-      </Head>
       <body className={notoSansFont.className}>
         <ReduxProvider>
           <AuthInitializer/>

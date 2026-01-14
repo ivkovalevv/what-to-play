@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { useGetOneGameQuery, useGetScreenshotsOneGameQuery } from "../../../store/api/rawg-api";
 import Link from "next/link";
 import styles from "./game-page.module.scss";
+import ImageSlider from "components/components/ImageSlider/ImageSlider";
 
 export default function GamePage() {
   const params = useParams();
@@ -20,8 +21,6 @@ export default function GamePage() {
     isLoading: isLoadingScreenshots, 
     error: errorScreenshots,
   } = useGetScreenshotsOneGameQuery({ slug: String(slug) });
-
-  console.log(screenshots?.results);
 
   if (isLoading)
     return (
@@ -61,6 +60,7 @@ export default function GamePage() {
   return (
       <div className={`container ${styles.game__container}`}>
         <h1 className={styles.game__title}>{game.name}</h1>
+        <ImageSlider screenshots={screenshots}/>
     </div>
   )
 }

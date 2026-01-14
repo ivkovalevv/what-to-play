@@ -5,11 +5,16 @@
     &__container{
         height: 100vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
     }
 
     &__title{
         color: $white-color;
+    }
+
+    &__information_wrapper{
+        height: 100%;
+        border-radius: 20px;
+        background-color: $white-ghost-color;
     }
 }

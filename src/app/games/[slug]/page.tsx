@@ -59,7 +59,9 @@ export default function GamePage() {
 
   return (
       <div className={`container ${styles.game__container}`}>
-        <h1 className={styles.game__title}>{game.name}</h1>
+        <div className={styles.game__information_wrapper}>
+          <h1 className={styles.game__title}>{game.name}</h1>
+        </div>
         <ImageSlider screenshots={screenshots}/>
     </div>
   )

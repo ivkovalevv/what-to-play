@@ -5,6 +5,7 @@ import { useGetOneGameQuery, useGetScreenshotsOneGameQuery } from "../../../stor
 import Link from "next/link";
 import styles from "./game-page.module.scss";
 import ImageSlider from "components/components/ImageSlider/ImageSlider";
+import Platforms from "components/components/Platforms/Platforms";
 
 export default function GamePage() {
   const params = useParams();
@@ -24,45 +25,55 @@ export default function GamePage() {
 
   if (isLoading)
     return (
-      <div className={`container ${styles.game__container}`}>
-        <div className="text-xl">Loading game details...</div>
+      <div className={styles.game}>
+        <div className={`container ${styles.game__container}`}>
+          <div className="text-xl">Loading game details...</div>
+        </div>
       </div>
     );
 
   if (error)
     return (
+    <div className={styles.game}>
       <div className={`container ${styles.game__container}`}>
-        <div className="text-red-500 text-center text-xl">
-          Error loading game
-        </div>
         <Link
           href="/"
           className="block text-center mt-4 text-blue-500 hover:underline"
         >
           ← Back to games
         </Link>
+        <div className="text-red-500 text-center text-xl">
+          Error loading game
+        </div>
       </div>
+    </div>
     );
 
   if (!game)
     return (
+    <div className={styles.game}>
       <div className={`container ${styles.game__container}`}>
-        <div className="text-center text-xl">Game not found</div>
         <Link
           href="/"
           className="block text-center mt-4 text-blue-500 hover:underline"
         >
           ← Back to games
         </Link>
+        <div className="text-center text-xl">Game not found</div>
       </div>
+    </div>
     );
 
   return (
+    <div className={styles.game}>
       <div className={`container ${styles.game__container}`}>
-        <div className={styles.game__information_wrapper}>
-          <h1 className={styles.game__title}>{game.name}</h1>
-        </div>
-        <ImageSlider screenshots={screenshots}/>
+          <div className={styles.game__information_wrapper}>
+            <h1 className={styles.game__title}>{game.name}</h1>
+            <div dangerouslySetInnerHTML={{ __html: game.description }} className={styles.game__description}/>
+          </div>
+          <ImageSlider screenshots={screenshots}/>
+      </div>
+      <Platforms platforms={game.platforms}/>
     </div>
   )
 }

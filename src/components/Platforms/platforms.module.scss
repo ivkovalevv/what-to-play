@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.platforms{
+
+    &__list{
+        display: flex;
+    }
+
+    &__item{
+        margin-right: 10px;
+    }
+}

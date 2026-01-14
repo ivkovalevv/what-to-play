@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Platform } from "components/components/Platforms/Platforms";
 
 export interface GamesResponse {
   count: number;
@@ -8,10 +9,12 @@ export interface GamesResponse {
 export interface Game {
   id: number;
   name: string;
+  description: string;
   slug: string;
   released: string;
   background_image: string;
   rating: number;
+  platforms: Platform[];
 }
 
 export type Screenshot = {

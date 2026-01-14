@@ -26,7 +26,7 @@ const ImageSlider = ({ screenshots }: ImageSliderProps) => {
             className={styles.slider}>
                 {
                     screenshots?.results.map((screenshot: Screenshot) => {
-                        return <SwiperSlide>
+                        return <SwiperSlide key={screenshot.id}>
                             <img src={screenshot.image} alt="slide-image" className={styles.slider__image}/>
                         </SwiperSlide>
                     })

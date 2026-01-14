@@ -8,6 +8,10 @@
     top: 0px;
     left: 0px;
     background: linear-gradient(180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .594812) 6.67%, rgba(0, 0, 0, .578694) 13.33%, rgba(0, 0, 0, .551004) 20%, rgba(0, 0, 0, .511553) 26.67%, rgba(0, 0, 0, .460935) 33.33%, rgba(0, 0, 0, .40087) 40%, rgba(0, 0, 0, .334385) 46.67%, rgba(0, 0, 0, .265615) 53.33%, rgba(0, 0, 0, .19913) 60%, rgba(0, 0, 0, .139065) 66.67%, rgba(0, 0, 0, .0884468) 73.33%, rgba(0, 0, 0, .0489959) 80%, rgba(0, 0, 0, .021306) 86.67%, rgba(0, 0, 0, .00518832) 93.33%, rgba(0, 0, 0, 0));
+    backdrop-filter: blur(0px);
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: all .5s ease;
 
     &__container{
         max-width: 1740px;
@@ -17,6 +21,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transition: width .5s ease;
+
+        &_scroll{
+            width: 95%;
+        }
     }
 
     &__search{
@@ -30,5 +39,15 @@
         width: 20px;
         height: 20px;
         fill: #FFF;
+    }
+
+    &__scroll{
+        background-color:  #464646a6;;
+        box-shadow: 0px 4px 9px 0px #00000017;
+        backdrop-filter: blur(7px);
+        border-radius: 50px;
+        width: 70%;
+        height: 70px;
+        margin-top: 10px;
     }
 }

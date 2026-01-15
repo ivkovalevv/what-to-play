@@ -8,5 +8,14 @@
 
     &__item{
         margin-right: 10px;
+        background-color:  $cards-background-color;
+        backdrop-filter: blur(7px);
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    &__icon{
+        width: 34px;
+        height: 34px;
     }
 }

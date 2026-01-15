@@ -15,15 +15,13 @@ export type PlatformsProps = {
 
 const Platforms = ({ platforms }: PlatformsProps) => {
     let platformsList = convertingPlatformsList({platforms});
-    
+
     return (
         <ul className={styles.platforms__list}>
             {platformsList.map((platform) => {
-                return <li className={styles.platforms__item} key={platform}>{
-                    platform === "Linux"
-                    ? <img src="/assets/images/linux-icon.png" alt={platform} /> 
-                    : platform
-                }</li>
+                return <li className={styles.platforms__item} key={platform}>
+                    <img src={`/assets/images/${platform.toLowerCase()}-icon.png`} alt={platform} className={styles.platforms__icon}/>
+                </li>
             })}
         </ul>
     )

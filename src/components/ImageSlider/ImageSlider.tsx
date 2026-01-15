@@ -12,7 +12,7 @@ const ImageSlider = ({ screenshots }: ImageSliderProps) => {
     return (
         <Swiper 
             modules={[Autoplay, Pagination, EffectCoverflow]}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
             effect="coverflow"
             coverflowEffect={{
                 rotate: 60,
@@ -23,6 +23,8 @@ const ImageSlider = ({ screenshots }: ImageSliderProps) => {
             }}
             loop
             pagination={{ clickable: true }}
+            observer={true}
+            observeParents={true}
             className={styles.slider}>
                 {
                     screenshots?.results.map((screenshot: Screenshot) => {

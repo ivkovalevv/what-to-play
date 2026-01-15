@@ -35,10 +35,87 @@
     &__title{
         color: $white-color;
         margin-left: auto;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        font-size: 48px;
     }
 
     &__description{
         line-height: 24px;
+    }
+
+    &__slider_wrapper{
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    &__slider_actions{
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+    }
+
+    &__slider_like_icon svg{
+        width: 30px !important;
+        height: 30px !important;
+        transform: translateY(1px);
+        transition: all .3s ease;
+        fill: $text-color !important;
+    }
+
+    &__slider_like_button{
+        font-size: 16px !important;
+        padding: 24px 9px;
+        border-radius: 50%;
+        box-shadow: none !important;
+        border: 1px solid $cards-background-color;
+        background-color: $cards-background-color;
+        backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        border: 1px solid #6d6d6d3f;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover{
+            background-color: $cards-background-color !important;
+            border: 1px solid $cards-background-color !important;
+        }
+
+        &:hover svg{
+            fill: $red-color !important;
+        }
+    }
+
+    &__slider_button{
+        font-size: 18px !important;
+        padding: 22px;
+        border-radius: $base-border-radius;
+        box-shadow: none !important;
+        border: 1px solid $cards-background-color;
+        background-color: $cards-background-color;
+        backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        border: 1px solid #6d6d6d3f;
+        margin-right: 10px;
+
+        & *{
+            transition: color .3s ease;
+        }
+
+        &:hover{
+            background-color: $cards-background-color !important;
+            border: 1px solid $cards-background-color !important;
+        }
+
+        &:hover *{
+            color: #d400ff !important;
+        }
     }
 }

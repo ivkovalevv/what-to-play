@@ -6,6 +6,13 @@ import Link from "next/link";
 import styles from "./game-page.module.scss";
 import ImageSlider from "components/components/ImageSlider/ImageSlider";
 import Platforms from "components/components/Platforms/Platforms";
+import localFont from 'next/font/local';
+import { Button } from 'antd';
+import { ArrowRightOutlined, HeartFilled } from '@ant-design/icons';
+
+const ChaletComprime = localFont({
+  src: '../../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
+})
 
 export default function GamePage() {
   const params = useParams();
@@ -70,12 +77,23 @@ export default function GamePage() {
           <div className={styles.game__content}>
             <div className={styles.game__description_wrapper}>
               <div className={styles.game__information_wrapper}>
-                <h1 className={styles.game__title}>{game.name}</h1>
+                <h1 className={`${styles.game__title} ${ChaletComprime.className}`}>{game.name}</h1>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} className={styles.game__description}/>
               </div>
               <Platforms platforms={game.platforms}/>
             </div>
-            <ImageSlider screenshots={screenshots}/>
+            <div className={styles.game__slider_wrapper}>
+                <div className={styles.game__slider_actions}>
+                  <Button type="primary" className={styles.game__slider_like_button}>
+                    <HeartFilled className={styles.game__slider_like_icon}/>
+                  </Button>
+                  <Button type="primary" className={styles.game__slider_button} href={game.website} target="_blank">
+                    <span>Jump to Website</span>
+                    <ArrowRightOutlined/>
+                  </Button>
+                </div>
+                <ImageSlider screenshots={screenshots}/>
+            </div>
           </div>
       </div>
     </div>

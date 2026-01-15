@@ -17,10 +17,6 @@
         display: flex;
         align-items: center;
 
-        &_special{
-            background-color:  transparent;
-        }
-
         &_description{
             color: $text-color;
             font-size: 16px;
@@ -32,7 +28,7 @@
             top: 110%;
             left: 50%;
             transform: translateX(-50%);
-            background: $cards-background-color;;
+            background: $cards-background-color;
             color: $text-color;
             padding: 5px 10px;
             border-radius: 20px;
@@ -49,6 +45,15 @@
             opacity: 1;
             visibility: visible;
             }
+
+        &_special{
+            background-color:  transparent;
+            position: static;
+
+            &::after{
+                background: transparent;
+            }
+        }
     }
 
     &__icon{

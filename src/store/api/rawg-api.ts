@@ -15,6 +15,7 @@ export interface Game {
   background_image: string;
   rating: number;
   platforms: Platform[];
+  website: string;
 }
 
 export type Screenshot = {

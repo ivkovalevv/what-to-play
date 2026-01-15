@@ -8,13 +8,17 @@ export type Platform = {
     }
 }
 
-const Platforms = ({ platforms }: { platforms: Platform[] }) => {
+type PlatformsProps = {
+    platforms: Platform[];
+}
+
+const Platforms = ({ platforms }: PlatformsProps) => {
     return (
         <ul className={styles.platforms__list}>
             {platforms.map((platform) => {
                 return <li className={styles.platforms__item} key={platform.platform.id}>{
-                    platform.platform.name === "Xbox One" || platform.platform.name === "Xbox Series S/X"
-                    ? <img src="/assets/images/xbox-icon.png" alt={platform.platform.name} /> 
+                    platform.platform.name === "Linux"
+                    ? <img src="/assets/images/linux-icon.png" alt={platform.platform.name} /> 
                     : platform.platform.name
                 }</li>
             })}

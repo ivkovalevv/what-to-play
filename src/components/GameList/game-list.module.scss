@@ -40,7 +40,7 @@
     }
 
     :global(.ant-card-cover) {
-        border-radius: 16px;
+        border-radius: $base-border-radius;
         overflow: hidden;
     }
 

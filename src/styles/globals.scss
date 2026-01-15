@@ -70,7 +70,7 @@ html {
 
 .swiper-slide{
   overflow: hidden !important;
-  border-radius: 20px !important;
+  border-radius: $base-border-radius !important;
   cursor: grab !important;
 }
 
@@ -80,7 +80,7 @@ html {
   bottom: 20px !important;
   transform: translate(-50%, 0%) !important;
   padding: 0px 10px 4px 10px !important;
-  border-radius: 20px !important;
+  border-radius: $base-border-radius !important;
   background-color: $cards-background-color !important;
 }
 

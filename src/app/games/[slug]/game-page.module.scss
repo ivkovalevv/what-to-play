@@ -4,7 +4,6 @@
     width: 100%;
     max-height: 100vh;
     height: 100vh;
-    background-image: linear-gradient(to right top, #8431b1, #7a2da3, #702a96, #672689, #5d237c, #522371, #482366, #3e225a, #33234c, #2a223d, #23202d, #1d1d1d);
     margin-top: 0px;
 
     &__content{
@@ -16,15 +15,21 @@
         gap: 30px;
     }
 
+    &__description_wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
     &__information_wrapper{
         width: 100%;
         max-height: 50%;
         padding: 20px;
-        border-radius: 20px;
+        border-radius: $base-border-radius;
         background-color:  $cards-background-color;
         backdrop-filter: blur(7px);
         overflow-y: auto;
         scrollbar-width: none;
+        margin-bottom: 10px;
     }
 
     &__title{

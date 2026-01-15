@@ -4,18 +4,55 @@
 
     &__list{
         display: flex;
+        /* margin-left: auto; */
     }
 
     &__item{
         margin-right: 10px;
-        background-color:  $cards-background-color;
         backdrop-filter: blur(7px);
-        padding: 10px;
-        border-radius: 20px;
+        padding: 8px;
+        border-radius: 12px;
+        background-color:  $cards-background-color;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &_special{
+            background-color:  transparent;
+        }
+
+        &_description{
+            color: $text-color;
+            font-size: 16px;
+        }
+
+        &::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: $cards-background-color;;
+            color: $text-color;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            pointer-events: none;
+            z-index: 1000;
+            }
+        
+            &:hover::after {
+            opacity: 1;
+            visibility: visible;
+            }
     }
 
     &__icon{
-        width: 34px;
-        height: 34px;
+        width: 28px;
+        height: 28px;
     }
 }

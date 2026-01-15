@@ -5,6 +5,7 @@
     max-height: 100vh;
     height: 100vh;
     margin-top: 0px;
+    position: relative;
 
     &__content{
         width: 100%;
@@ -94,7 +95,7 @@
 
     &__slider_button{
         font-size: 18px !important;
-        padding: 22px;
+        padding: 22px 18px 22px 22px;
         border-radius: $base-border-radius;
         box-shadow: none !important;
         border: 1px solid $cards-background-color;
@@ -114,8 +115,35 @@
             border: 1px solid $cards-background-color !important;
         }
 
+        &_icon{
+            transform: rotate(-45deg);
+            transition: transform .3s ease;
+        }
+
         &:hover *{
             color: #d400ff !important;
+            transform: rotate(0deg);
+        }
+    }
+
+    &__back_button{
+        position: absolute;
+        left: 20px;
+        top: 100px;
+        padding: 22px 11px;
+        transform: rotate(180deg);
+        background-color: $cards-background-color !important;
+        border: 1px solid $cards-background-color !important;
+        border-radius: 50%;
+
+        & *{
+            width: 22px;
+            height: 22px;
+            transition: color .3s ease;
+        }
+
+        &:hover * {
+            color: $primary-hover-color;
         }
     }
 }

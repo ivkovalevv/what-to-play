@@ -19,7 +19,7 @@ const Hero = () => {
                     <p className={styles.hero__intro}>BEST GAME STORE</p>
                     <h1 className={`${styles.hero__title} ${stackSansNotchFont.className}`}>Your Next Game is Here</h1>
                     <p className={styles.hero__description}>Find your perfect match. Compare the ratings.<br/> Make a decision in a matter of seconds.</p>
-                    <Button className={styles.hero__button}>Get Started</Button>
+                    <Button className={styles.hero__button} href="#game-list">Get Started</Button>
                 </div>}
             </div>
         </section>

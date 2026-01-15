@@ -34,7 +34,9 @@ export default function GamePage() {
     return (
       <div className={styles.game}>
         <div className={`container ${styles.game__container}`}>
-          <div className="text-xl">Loading game details...</div>
+          <div className={styles.game__content}>
+            <div className="text-xl">Loading game details...</div>
+          </div>
         </div>
       </div>
     );
@@ -43,14 +45,16 @@ export default function GamePage() {
     return (
     <div className={styles.game}>
       <div className={`container ${styles.game__container}`}>
-        <Link
-          href="/"
-          className="block text-center mt-4 text-blue-500 hover:underline"
-        >
-          ← Back to games
-        </Link>
-        <div className="text-red-500 text-center text-xl">
-          Error loading game
+        <div className={styles.game__content}>
+          <Link
+            href="/"
+            className="block text-center mt-4 text-blue-500 hover:underline"
+          >
+            ← Back to games
+          </Link>
+          <div className="text-red-500 text-center text-xl">
+            Error loading game
+          </div>
         </div>
       </div>
     </div>
@@ -60,13 +64,15 @@ export default function GamePage() {
     return (
     <div className={styles.game}>
       <div className={`container ${styles.game__container}`}>
-        <Link
-          href="/"
-          className="block text-center mt-4 text-blue-500 hover:underline"
-        >
-          ← Back to games
-        </Link>
-        <div className="text-center text-xl">Game not found</div>
+        <div className={styles.game__content}>
+          <Link
+            href="/"
+            className="block text-center mt-4 text-blue-500 hover:underline"
+          >
+            ← Back to games
+          </Link>
+          <div className="text-center text-xl">Game not found</div>
+        </div>
       </div>
     </div>
     );
@@ -84,18 +90,21 @@ export default function GamePage() {
             </div>
             <div className={styles.game__slider_wrapper}>
                 <div className={styles.game__slider_actions}>
-                  <Button type="primary" className={styles.game__slider_like_button}>
+                  <Button className={styles.game__slider_like_button}>
                     <HeartFilled className={styles.game__slider_like_icon}/>
                   </Button>
-                  <Button type="primary" className={styles.game__slider_button} href={game.website} target="_blank">
+                  <Button className={styles.game__slider_button} href={game.website} target="_blank">
                     <span>Jump to Website</span>
-                    <ArrowRightOutlined/>
+                    <ArrowRightOutlined className={styles.game__slider_button_icon}/>
                   </Button>
                 </div>
                 <ImageSlider screenshots={screenshots}/>
             </div>
           </div>
       </div>
+      <Button className={styles.game__back_button} onClick={() => window.history.back()}>
+        <ArrowRightOutlined/>
+      </Button>
     </div>
   )
 }

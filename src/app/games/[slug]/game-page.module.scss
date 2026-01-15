@@ -2,27 +2,29 @@
 
 .game{
     width: 100%;
+    max-height: 100vh;
     height: 100vh;
-    background-image: url('/assets/images/game-background.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 110%;
+    background-image: linear-gradient(to right top, #8431b1, #7a2da3, #702a96, #672689, #5d237c, #522371, #482366, #3e225a, #33234c, #2a223d, #23202d, #1d1d1d);
     margin-top: 0px;
-    padding-top: 100px;
 
-    &__container{
-        height: fit-content;
-        display: flex;
-        align-items: start;
-        justify-content: space-between;
+    &__content{
+        width: 100%;
+        padding-top: 100px;
+        display: grid;
+        grid-template-columns: 450px auto;
+        grid-template-rows: 650px auto;
+        gap: 30px;
     }
 
     &__information_wrapper{
-        width: 28%;
+        width: 100%;
+        max-height: 50%;
         padding: 20px;
         border-radius: 20px;
         background-color:  $cards-background-color;
         backdrop-filter: blur(7px);
+        overflow-y: auto;
+        scrollbar-width: none;
     }
 
     &__title{

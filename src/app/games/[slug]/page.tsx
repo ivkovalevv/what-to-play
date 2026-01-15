@@ -66,14 +66,16 @@ export default function GamePage() {
 
   return (
     <div className={styles.game}>
-      <div className={`container ${styles.game__container}`}>
-          <div className={styles.game__information_wrapper}>
-            <h1 className={styles.game__title}>{game.name}</h1>
-            <div dangerouslySetInnerHTML={{ __html: game.description }} className={styles.game__description}/>
+      <div className={`container`}>
+          <div className={styles.game__content}>
+            <div className={styles.game__information_wrapper}>
+              <h1 className={styles.game__title}>{game.name}</h1>
+              <div dangerouslySetInnerHTML={{ __html: game.description }} className={styles.game__description}/>
+            </div>
+            <ImageSlider screenshots={screenshots}/>
+            <Platforms platforms={game.platforms}/>
           </div>
-          <ImageSlider screenshots={screenshots}/>
       </div>
-      <Platforms platforms={game.platforms}/>
     </div>
   )
 }

@@ -12,18 +12,13 @@
         min-width: 88px;
     }
 
-    &__list_wrapper{
-        max-width: 100%;
-        overflow: hidden;
-    }
-
     &__list{
         display: flex;
         align-items: center;
         max-width: 100%;
         overflow: auto;
         scrollbar-width: none;
-        gap: 4px;
+        gap: 10px;
     }
 
     &__item{

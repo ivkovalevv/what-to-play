@@ -23,18 +23,16 @@ const Developers = (props: DevelopersProps) => {
     return (
         <div className={styles.developers}>
             <h3 className={styles.developers__title}>Developers:</h3>
-            <div className={styles.developers__list_wrapper}>
-                <ul ref={scrollXContainer} className={styles.developers__list}>
-                    {props.developers.map((developer) => (
-                    <li 
-                        key={developer.id} 
-                        className={styles.developers__item}
-                    >
-                        {developer.name}
-                    </li>
-                    ))}
-                </ul>
-            </div>
+            <ul ref={scrollXContainer} className={styles.developers__list}>
+                {props.developers.map((developer) => (
+                <li 
+                    key={developer.id} 
+                    className={styles.developers__item}
+                >
+                    {developer.name}
+                </li>
+                ))}
+            </ul>
         </div>
     )
 }

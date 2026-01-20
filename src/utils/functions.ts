@@ -1,4 +1,6 @@
 import { Platform } from "components/components/Platforms/platforms.types";
+import { Rating } from "components/components/Ratings/ratings.types";
+
 
 export const generateRandomCode = (length: number = 6): string => {
   const numberChars = "0123456789";
@@ -12,10 +14,12 @@ export const generateRandomCode = (length: number = 6): string => {
   return code;
 };
 
+
 export const validateEmail = (email: string): boolean => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 };
+
 
 export const convertingPlatformsList = ({ platforms = [] }: {platforms: Platform[]}): string[] =>  {
   const categories = ["PlayStation", "Xbox", "macOS", "Nintendo", "PC", "Linux"];
@@ -32,5 +36,21 @@ export const convertingPlatformsList = ({ platforms = [] }: {platforms: Platform
   });
 
   return Array.from(uniqueCategories);
+}
+
+export const convertingRatingsList = (ratings: Rating[] = []): Rating[] => {
+  const RATING_LABELS = {
+    exceptional: 'Top',
+    recommended: 'Good',
+    meh: 'Ok',
+    skip: 'Bad',
+  };
+
+  let convertingRatings = ratings.map((rating) => ({
+    ...rating,
+    title: RATING_LABELS[rating.title as keyof typeof RATING_LABELS],
+  }))
+
+  return convertingRatings;
 }
 

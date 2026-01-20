@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.ratings{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+
+    &__rating{
+        font-size: 42px;
+        margin-right: 10px;
+    }
+}

@@ -1,14 +1,26 @@
 @import "../../styles/variables.scss";
 
 .platforms{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin-bottom: 10px;
+    
+    &__title{
+        font-size: 16px;
+        margin-right: 10px;
+        min-width: 88px;
+    }
 
     &__list{
         display: flex;
         max-width: 100%;
+        overflow: auto;
+        scrollbar-width: none;
+        gap: 10px;
     }
 
     &__item{
-        margin-right: 10px;
         backdrop-filter: blur(7px);
         padding: 8px;
         border-radius: 12px;
@@ -16,12 +28,6 @@
         position: relative;
         display: flex;
         align-items: center;
-
-        &_description{
-            min-width: 80px;
-            color: $text-color;
-            font-size: 16px;
-        }
 
         &::after {
             content: attr(data-tooltip);
@@ -46,14 +52,6 @@
             opacity: 1;
             visibility: visible;
             }
-
-        &_special{
-            background-color:  transparent;
-
-            &::after{
-                background: transparent;
-            }
-        }
     }
 
     &__icon{

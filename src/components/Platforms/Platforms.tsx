@@ -11,16 +11,16 @@ const Platforms = ({gameName, platforms = [] }: PlatformsProps) => {
     let platformsList = convertingPlatformsList({platforms});
 
     return (
-        <ul className={styles.platforms__list}>
-            <li className={`${styles.platforms__item} ${styles.platforms__item_special}`}>
-                <p className={styles.platforms__item_description}>Platforms:</p>
-            </li>
-            {platformsList.map((platform) => {
-                return <li className={styles.platforms__item} key={platform} data-tooltip={platform}>
-                    <img src={`/assets/images/${platform.toLowerCase()}-icon.png`} alt={platform} className={styles.platforms__icon}/>
-                </li>
-            })}
-        </ul>
+        <div className={styles.platforms}>
+            <h3 className={styles.platforms__title}>Platforms:</h3>
+            <ul className={styles.platforms__list}>
+                {platformsList.map((platform) => {
+                    return <li key={platform} className={styles.platforms__item} data-tooltip={platform}>
+                        <img src={`/assets/images/${platform.toLowerCase()}-icon.png`} alt={platform} className={styles.platforms__icon}/>
+                    </li>
+                })}
+            </ul>
+        </div>
     )
 }
 

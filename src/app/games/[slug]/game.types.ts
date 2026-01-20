@@ -1,4 +1,5 @@
 import { Genre } from "components/components/Genres/genres.types";
+import { Developers } from "components/components/Developers/developers.types";
 import { Platform } from "components/components/Platforms/platforms.types";
 
 export interface Game {
@@ -11,7 +12,8 @@ export interface Game {
   rating: number;
   platforms: Platform[];
   website: string;
-  genres: Genre[],
+  developers: Developer[];
+  genres: Genre[];
 }
 
 export interface Screenshot {

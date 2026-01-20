@@ -8,16 +8,16 @@ const Genres = (props: GenresProps) => {
     }
 
     return (
-        <ul className={styles.genres__list}>
-            <li className={`${styles.genres__item} ${styles.genres__item_special}`}>
-                <p className={styles.genres__item_description}>Genres:</p>
-            </li>
-            {
-                props.genres.map((genre) => {
-                    return <li className={styles.genres__item}>{genre.name}</li>
-                })
-            }
-        </ul>
+        <div className={styles.genres}>
+            <h3 className={styles.genres__title}>Genres:</h3>
+            <ul className={styles.genres__list}>
+                {
+                    props.genres.map((genre) => {
+                        return <li key={genre.id} className={styles.genres__item}>{genre.name}</li>
+                    })
+                }
+            </ul>
+        </div>
     )
 }
 

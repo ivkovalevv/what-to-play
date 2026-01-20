@@ -2,7 +2,12 @@ import { convertingPlatformsList } from "components/utils/functions";
 import styles from "./platforms.module.scss";
 import { PlatformsProps } from "./platforms.types";
 
-const Platforms = ({ platforms }: PlatformsProps) => {
+const Platforms = ({gameName, platforms = [] }: PlatformsProps) => {
+    if(platforms.length === 0){
+        console.log(`The game ${gameName} is not available on any of the platforms.`);
+        return null;
+    }
+
     let platformsList = convertingPlatformsList({platforms});
 
     return (

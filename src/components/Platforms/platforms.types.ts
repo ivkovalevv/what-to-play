@@ -7,5 +7,6 @@ export type Platform = {
 }
 
 export type PlatformsProps = {
+    gameName: string
     platforms: Platform[];
 }

@@ -86,7 +86,7 @@ export default function GamePage() {
                 <h1 className={`${styles.game__title} ${ChaletComprime.className}`}>{game.name}</h1>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} className={styles.game__description}/>
               </div>
-              <Platforms platforms={game.platforms}/>
+              <Platforms gameName={game.name} platforms={game.platforms}/>
             </div>
             <div className={styles.game__slider_wrapper}>
                 <div className={styles.game__slider_actions}>

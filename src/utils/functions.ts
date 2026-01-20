@@ -1,4 +1,4 @@
-import { Platform, PlatformsProps } from "components/components/Platforms/Platforms";
+import { Platform } from "components/components/Platforms/platforms.types";
 
 export const generateRandomCode = (length = 6) => {
   const numberChars = "0123456789";
@@ -17,7 +17,7 @@ export const validateEmail = (email: string) => {
   return regex.test(email);
 };
 
-export const convertingPlatformsList = ({ platforms }: PlatformsProps): string[] =>  {
+export const convertingPlatformsList = ({ platforms = [] }: {platforms: Platform[]}): string[] =>  {
   const categories = ["PlayStation", "Xbox", "macOS", "Nintendo", "PC", "Linux"];
   const uniqueCategories = new Set<string>();
 

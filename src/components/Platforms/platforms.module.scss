@@ -27,6 +27,7 @@
         position: relative;
         display: flex;
         align-items: center;
+        border: 1px solid $cards-background-color;
 
         &::after {
             content: attr(data-tooltip);

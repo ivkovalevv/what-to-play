@@ -23,11 +23,12 @@
 
     &__item{
         backdrop-filter: blur(7px);
-        padding: 4px 8px;
+        padding: 8px;
         border-radius: 12px;
         background-color:  $cards-background-color;
         position: relative;
         display: flex;
         align-items: center;
+        border: 1px solid $cards-background-color;
     }
 }

@@ -1,5 +1,6 @@
 import { GenresProps } from "./genres.types";
 import styles from "./genres.module.scss";
+import { useEffect, useRef } from "react";
 
 const Genres = (props: GenresProps) => {
     if(props.genres.length === 0){
@@ -7,10 +8,22 @@ const Genres = (props: GenresProps) => {
         return null;
     }
 
+    const scrollXContainer = useRef<HTMLUListElement>(null);
+    
+    useEffect(() => {
+        const container = scrollXContainer.current;
+        if (!container) return;
+
+        container.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            container.scrollLeft += e.deltaY;
+        });
+    }, []);
+
     return (
         <div className={styles.genres}>
             <h3 className={styles.genres__title}>Genres:</h3>
-            <ul className={styles.genres__list}>
+            <ul ref={scrollXContainer} className={styles.genres__list}>
                 {
                     props.genres.map((genre) => {
                         return <li key={genre.id} className={styles.genres__item}>{genre.name}</li>

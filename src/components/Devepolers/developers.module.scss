@@ -12,18 +12,24 @@
         min-width: 88px;
     }
 
+    &__list_wrapper{
+        max-width: 100%;
+        overflow: hidden;
+    }
+
     &__list{
         display: flex;
         align-items: center;
         max-width: 100%;
         overflow: auto;
-        gap: 10px;
+        scrollbar-width: none;
+        gap: 4px;
     }
 
     &__item{
         backdrop-filter: blur(7px);
-        padding: 8px;
-        border-radius: 12px;
+        padding: 2px 6px;
+        border-radius: 8px;
         background-color:  $cards-background-color;
         position: relative;
         display: flex;

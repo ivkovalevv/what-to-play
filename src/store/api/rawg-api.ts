@@ -1,32 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Platform } from "components/components/Platforms/Platforms";
-
-export interface GamesResponse {
-  count: number;
-  results: Game[];
-}
-
-export interface Game {
-  id: number;
-  name: string;
-  description: string;
-  slug: string;
-  released: string;
-  background_image: string;
-  rating: number;
-  platforms: Platform[];
-  website: string;
-}
-
-export type Screenshot = {
-  id: number;
-  image: string;
-}
-
-export interface Screenshots {
-  count: number;
-  results: Screenshot[];
-}
+import { GamesResponse, ScreenshotsResponse, GameResponse } from "./rawg.types";
 
 const RAWG_API_KEY = process.env.NEXT_PUBLIC_RAWG_API_KEY;
 
@@ -73,10 +46,10 @@ export const rawgApi = createApi({
         return currentArg?.page !== previousArg?.page;
       },
     }),
-    getOneGame: builder.query<Game, { slug: string }>({
+    getOneGame: builder.query<GameResponse, { slug: string }>({
       query: ({ slug }) => `games/${slug}?key=${RAWG_API_KEY}`,
     }),
-    getScreenshotsOneGame: builder.query<Screenshots, { slug: string}>({
+    getScreenshotsOneGame: builder.query<ScreenshotsResponse, { slug: string}>({
       query: ({ slug }) => `games/${slug}/screenshots?key=${RAWG_API_KEY}`,
     }),
   }),

@@ -1,17 +1,6 @@
 import { convertingPlatformsList } from "components/utils/functions";
 import styles from "./platforms.module.scss";
-
-export type Platform = {
-    platform: {
-        id: number;
-        name: string;
-        slug: string;
-    }
-}
-
-export type PlatformsProps = {
-    platforms: Platform[];
-}
+import { PlatformsProps } from "./platforms.types";
 
 const Platforms = ({ platforms }: PlatformsProps) => {
     let platformsList = convertingPlatformsList({platforms});

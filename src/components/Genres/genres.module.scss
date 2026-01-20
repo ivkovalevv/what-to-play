@@ -30,5 +30,6 @@
         display: flex;
         align-items: center;
         border: 1px solid $cards-background-color;
+        text-wrap: nowrap;
     }
 }

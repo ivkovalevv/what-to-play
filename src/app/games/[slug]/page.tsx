@@ -12,6 +12,7 @@ import { ArrowRightOutlined, HeartFilled } from '@ant-design/icons';
 import Genres from "components/components/Genres/Genres";
 import Developers from "components/components/Devepolers/Developers";
 import Ratings from "components/components/Ratings/Ratings";
+import ReleaseDate from "components/components/ReleaseDate/ReleaseDate";
 
 const ChaletComprime = localFont({
   src: '../../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
@@ -93,6 +94,7 @@ export default function GamePage() {
               <Developers gameName={game.name} developers={game.developers}/>
               <Genres gameName={game.name} genres={game.genres}/>
               <Platforms gameName={game.name} platforms={game.platforms}/>
+              <ReleaseDate releaseDate={game.released}/>
             </div>
             <div className={styles.game__slider_wrapper}>
                 <div className={styles.game__slider_actions}>

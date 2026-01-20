@@ -10,6 +10,7 @@ import { StarFilled } from "@ant-design/icons";
 import { useState } from "react";
 import styles from "./game-list.module.scss";
 import Link from "next/link";
+import { formatedDate } from "components/utils/functions";
 
 export const GameList = () => {
   const [page, setPage] = useState(1);
@@ -49,10 +50,7 @@ export const GameList = () => {
                     title={game.name}
                     description={
                       <>
-                        {`Release date: ${game.released
-                          .split("-")
-                          .reverse()
-                          .join(".")} | `}
+                        {`Release date: ${formatedDate(game.released)} | `}
                         <StarFilled className={styles.card__star} />{" "}
                         {game.rating}
                       </>

@@ -28,6 +28,7 @@
         display: flex;
         align-items: center;
         border: 1px solid $cards-background-color;
+        z-index: 1000;
 
         &::after {
             content: attr(data-tooltip);
@@ -35,7 +36,8 @@
             top: 110%;
             left: 50%;
             transform: translateX(-50%);
-            background: $cards-background-color;
+            background: rgba(46, 46, 46, 0.89);
+            backdrop-filter: blur(7px);
             color: $text-color;
             padding: 5px 10px;
             border-radius: 20px;

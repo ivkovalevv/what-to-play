@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.releasedate{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin-bottom: 10px;
+    
+    &__title{
+        font-size: 16px;
+        margin-right: 10px;
+        min-width: 88px;
+    }
+
+    &__date{
+        backdrop-filter: blur(7px);
+        font-size: 14px;
+        padding: 2px 6px;
+        border-radius: 6px;
+        background-color:  $text-ghost-color;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid $cards-background-color;
+        color: $background-color;
+    }
+}

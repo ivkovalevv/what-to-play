@@ -2,6 +2,10 @@ import { Platform } from "components/components/Platforms/platforms.types";
 import { Rating } from "components/components/Ratings/ratings.types";
 
 
+export const formatedDate = (date: string): string => {
+  return date.split("-").reverse().join(".");
+}
+
 export const generateRandomCode = (length: number = 6): string => {
   const numberChars = "0123456789";
 

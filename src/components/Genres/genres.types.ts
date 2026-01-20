@@ -3,3 +3,8 @@ export interface Genre {
     name: string,
     slug: string,
 }
+
+export interface GenresProps{
+    gameName: string;
+    genres: Genre[];
+};

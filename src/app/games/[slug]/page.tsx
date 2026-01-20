@@ -9,6 +9,7 @@ import Platforms from "components/components/Platforms/Platforms";
 import localFont from 'next/font/local';
 import { Button } from 'antd';
 import { ArrowRightOutlined, HeartFilled } from '@ant-design/icons';
+import Genres from "components/components/Genres/Genres";
 
 const ChaletComprime = localFont({
   src: '../../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
@@ -86,6 +87,7 @@ export default function GamePage() {
                 <h1 className={`${styles.game__title} ${ChaletComprime.className}`}>{game.name}</h1>
                 <div dangerouslySetInnerHTML={{ __html: game.description }} className={styles.game__description}/>
               </div>
+              <Genres gameName={game.name} genres={game.genres}/>
               <Platforms gameName={game.name} platforms={game.platforms}/>
             </div>
             <div className={styles.game__slider_wrapper}>

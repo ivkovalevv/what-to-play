@@ -1,9 +1,9 @@
 import { Platform } from "components/components/Platforms/platforms.types";
 
-export const generateRandomCode = (length = 6) => {
+export const generateRandomCode = (length: number = 6): string => {
   const numberChars = "0123456789";
 
-  let code = "";
+  let code: string = "";
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * numberChars.length);
     code += numberChars[randomIndex];
@@ -12,7 +12,7 @@ export const generateRandomCode = (length = 6) => {
   return code;
 };
 
-export const validateEmail = (email: string) => {
+export const validateEmail = (email: string): boolean => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 };

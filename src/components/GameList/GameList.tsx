@@ -49,7 +49,7 @@ export const GameList = () => {
                     title={game.name}
                     description={
                       <>
-                        {`Released: ${game.released
+                        {`Release date: ${game.released
                           .split("-")
                           .reverse()
                           .join(".")} | `}

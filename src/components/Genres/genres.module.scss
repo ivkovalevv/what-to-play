@@ -1,1 +1,32 @@
 @import "../../styles/variables.scss";
+
+.genres{
+
+    &__list{
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    &__item{
+        margin-right: 10px;
+        backdrop-filter: blur(7px);
+        padding: 8px;
+        border-radius: 12px;
+        background-color:  $cards-background-color;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &_description{
+            min-width: 80px;
+            color: $text-color;
+            font-size: 16px;
+        }
+
+        &_special{
+            background-color:  transparent;
+        }
+    }
+}

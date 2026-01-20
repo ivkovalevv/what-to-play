@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.ratingscale{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &__line{
+        height: 10px;
+
+        &[data-color="Top"]{
+            background-color: $top-color;
+        }
+        &[data-color="Good"]{
+            background-color: $good-color;
+        }
+        &[data-color="Ok"]{
+            background-color: $ok-color;
+        }
+        &[data-color="Bad"]{
+            background-color: $bad-color;
+        }
+    }
+}

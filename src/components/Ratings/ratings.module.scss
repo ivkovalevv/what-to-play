@@ -6,7 +6,69 @@
     margin-bottom: 10px;
 
     &__rating{
-        font-size: 42px;
+        font-size: 46px;
         margin-right: 10px;
+        font-weight: 600;
+        line-height: 100%;
+
+        &[data-color="Top"]{
+            color: $top-color;
+        }
+        &[data-color="Good"]{
+            color: $good-color;
+        }
+        &[data-color="Ok"]{
+            color: $ok-color;
+        }
+        &[data-color="Bad"]{
+            color: $bad-color;
+        }
+    }
+
+    &__ratings_wrapper{
+        width: 100%;
+        gap: 10px;
+    }
+
+    &__list{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &_dot{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $white-ghost-color;
+
+            &[data-color="Top"]{
+                background-color: $top-color;
+            }
+            &[data-color="Good"]{
+                background-color: $good-color;
+            }
+            &[data-color="Ok"]{
+                background-color: $ok-color;
+            }
+            &[data-color="Bad"]{
+                background-color: $bad-color;
+            }
+        }
+
+        &_title{
+            font-size: 14px;
+        }
+
+        &_value{
+            font-size: 12px;
+            color: $white-ghost-color;
+        }
     }
 }

@@ -54,3 +54,16 @@ export const convertingRatingsList = (ratings: Rating[] = []): Rating[] => {
   return convertingRatings;
 }
 
+export const getRatingColor = (rating: number): string => {
+  const RATING_THRESHOLDS = {
+    BAD: 2.5,
+    OK: 3.5,
+    GOOD: 4.5,
+  } as const;
+
+  if(rating < RATING_THRESHOLDS.BAD) return "Bad";
+  if(rating < RATING_THRESHOLDS.OK) return "Ok";
+  if(rating < RATING_THRESHOLDS.GOOD) return "Good";
+  return "Top";
+};
+

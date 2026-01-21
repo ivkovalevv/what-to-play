@@ -2,17 +2,26 @@
 
 .signature{
     color: $text-color;
-    font-size: clamp(.875rem, .838rem + .1852vw, 1rem);
+    font-size: 18px;
     margin: 30px 0px 0px 0px;
     text-align: center;
     width: fit-content;
     display: block;
-    margin: auto auto 0px auto;
+    color: #5f5f5f;;
+    font-variant-caps: all-small-caps;
+    /* margin: auto auto 0px auto;
     background-color: #ffffff17;
     backdrop-filter: blur(7px);
     padding: 10px 40px;
     border-radius: $base-border-radius;
-    border: 1px solid $border-color;
+    border: 1px solid $border-color; */
+
+    &__wrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     &__link{
         -webkit-text-fill-color: #0000;

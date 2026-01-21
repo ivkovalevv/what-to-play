@@ -6,7 +6,7 @@ const RatingScale = ({ ratings }: {ratings: Rating[]}) => {
         <ul className={styles.ratingscale}>
             {
                 ratings.map(rating => {
-                    return <li style={{
+                    return <li key={rating.id} style={{
                         width: `${rating.percent}%`
                     }} className={styles.ratingscale__line} data-color={rating.title}></li>
                 })

@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.signature{
+    color: $text-color;
+    font-size: clamp(.875rem, .838rem + .1852vw, 1rem);
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+    width: fit-content;
+    display: block;
+    margin: auto auto 0px auto;
+    background-color: #ffffff17;
+    backdrop-filter: blur(7px);
+    padding: 10px 40px;
+    border-radius: $base-border-radius;
+    border: 1px solid $border-color;
+
+    &__link{
+        -webkit-text-fill-color: #0000;
+        background: -webkit-linear-gradient(left, #c39eff, #8c0fd4);
+        background-clip: text;
+        -webkit-background-clip: text;
+        border-bottom: 1px solid $primary-color;
+        color: $primary-color;
+        margin: 0 5px;
+    }
+}

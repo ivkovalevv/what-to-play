@@ -8,7 +8,7 @@ const SpecialGothicExpandedOne = localFont({
 const CircleLogo = ({ text }: { text: string}) => {
     return (
         <svg className={styles.circle} viewBox="0 0 100 100">
-            <path id="circle" d="M 0,0 A 30,30 0 0,1 114,75" />
+            <path id="circle" d="M -6,0 A 30,30 0 0,1 108,75" />
             <text>
                 <textPath className={SpecialGothicExpandedOne.className} xlinkHref="#circle">
                     {text}

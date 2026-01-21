@@ -17,7 +17,7 @@ import Description from "components/components/Description/Description";
 
 const ChaletComprime = localFont({
   src: '../../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
-})
+});
 
 export default function GamePage() {
   const params = useParams();

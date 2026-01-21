@@ -35,7 +35,8 @@
     }
     
     :global(.ant-card-meta-title) {
-        font-size: 20px;
+        font-size: 24px;
+        line-height: 100%;
         display: flex;
     }
 
@@ -44,13 +45,26 @@
         overflow: hidden;
     }
 
+    :global(.ant-card-meta-description){
+        font-size: 16px;
+        font-weight: 400;
+    }
+
     &:hover{
         box-shadow: none !important;
         transform: scale(0.98);
     }
 
+    &__content{
+        display: flex;
+    }
+
+    &__star_wrapper{
+        display: flex;
+    }
+
     &__star{
-        margin-left: auto;
+        margin-right: 5px;
     }
 
     &__star *{

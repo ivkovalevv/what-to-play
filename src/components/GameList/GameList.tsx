@@ -11,6 +11,12 @@ import { useState } from "react";
 import styles from "./game-list.module.scss";
 import Link from "next/link";
 import { formatedDate } from "components/utils/functions";
+import localFont from 'next/font/local';
+import ReleaseDate from "../ReleaseDate/ReleaseDate";
+
+const ChaletComprime = localFont({
+  src: '../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
+});
 
 export const GameList = () => {
   const [page, setPage] = useState(1);
@@ -46,14 +52,16 @@ export const GameList = () => {
                   }
                 >
                   <Card.Meta
-                    className={styles["card-title"]}
+                    className={`${styles["card-title"]} `}
                     title={game.name}
                     description={
-                      <>
-                        {`Release date: ${formatedDate(game.released)} | `}
-                        <StarFilled className={styles.card__star} />{" "}
-                        {game.rating}
-                      </>
+                      <div className={styles.card__content}>
+                        <p>{`Release date: ${formatedDate(game.released)}ㅤ|ㅤ`}</p>
+                        <div className={styles.card__star_wrapper}>
+                          <StarFilled className={styles.card__star} />{" "}
+                          <p>{game.rating}</p>
+                        </div>
+                      </div>
                     }
                   />
                 </Card>

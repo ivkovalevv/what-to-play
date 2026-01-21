@@ -45,7 +45,7 @@
     margin-bottom: 0px;
 }
 
-@keyframes logo-animation{
+/* @keyframes logo-animation{
     0% {
         transform: rotate(0deg);
     }
@@ -54,5 +54,26 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+} */
+
+@keyframes logo-animation{
+    0% {
+        transform: scale(1);
+    }
+    2% {
+        transform: scale(0.7);
+    }
+    4% {
+        transform: scale(1.1) rotate(360deg);
+    }
+    6% {
+        transform: scale(0.7) rotate(360deg);
+    }
+    8% {
+        transform: scale(1.1) rotate(360deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
     }
 }

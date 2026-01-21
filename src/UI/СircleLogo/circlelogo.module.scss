@@ -8,6 +8,10 @@
     font-size: 14px;
     fill: $white-color;
     text-transform: uppercase;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
 
     & path {
         fill: transparent;

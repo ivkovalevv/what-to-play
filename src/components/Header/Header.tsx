@@ -11,7 +11,7 @@ const Header = () => {
     const [isHeaderScrolled, setIsHeaderScrolled] = useState<boolean>(false);
 
     function checkVisibilityHeader(){
-        window.scrollY > 500 ? setIsHeaderScrolled(true) : setIsHeaderScrolled(false);
+        window.scrollY > 50 ? setIsHeaderScrolled(true) : setIsHeaderScrolled(false);
     };
 
     useEffect(() => {

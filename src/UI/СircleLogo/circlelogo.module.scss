@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.circle{
+    display: block;
+    overflow: visible;
+    margin: 100px auto 0px;
+    width: 150px;
+    font-size: 14px;
+    fill: $white-color;
+    text-transform: uppercase;
+
+    & path {
+        fill: transparent;
+    }
+}

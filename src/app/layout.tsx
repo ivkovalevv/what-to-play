@@ -4,6 +4,7 @@ import "../styles/globals.scss";
 import { ReduxProvider } from "../providers/redux-provider";
 import Header from "../components/Header/Header";
 import AuthInitializer from "../components/AuthInitializer/AuthInitializer";
+import Footer from "components/components/Footer/Footer";
 
 const notoSansFont = Noto_Sans({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <AuthInitializer/>
           <Header />
           {children}
+          <Footer/>
         </ReduxProvider>
       </body>
     </html>

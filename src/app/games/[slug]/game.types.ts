@@ -6,7 +6,7 @@ import { Rating } from "components/components/Ratings/ratings.types";
 export interface Game {
   id: number;
   name: string;
-  description: string;
+  description_raw: string;
   slug: string;
   released: string;
   background_image: string;

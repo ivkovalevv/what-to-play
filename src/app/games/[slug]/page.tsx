@@ -13,6 +13,7 @@ import Genres from "components/components/Genres/Genres";
 import Developers from "components/components/Devepolers/Developers";
 import Ratings from "components/components/Ratings/Ratings";
 import ReleaseDate from "components/components/ReleaseDate/ReleaseDate";
+import Description from "components/components/Description/Description";
 
 const ChaletComprime = localFont({
   src: '../../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
@@ -87,9 +88,7 @@ export default function GamePage() {
           <div className={styles.game__content}>
             <div className={styles.game__description_wrapper}>
               <h1 className={`${styles.game__title} ${ChaletComprime.className}`}>{game.name}</h1>
-              <div className={styles.game__information_wrapper}>
-                <div dangerouslySetInnerHTML={{ __html: game.description }} className={styles.game__description}/>
-              </div>
+              <Description description={game.description_raw} />
               <Ratings gameName={game.name} rating={game.rating} ratings={game.ratings}/>
               <Developers gameName={game.name} developers={game.developers}/>
               <Genres gameName={game.name} genres={game.genres}/>

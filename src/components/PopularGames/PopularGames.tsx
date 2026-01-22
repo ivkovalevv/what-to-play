@@ -3,22 +3,15 @@
 import {
   useGetGamesQuery,
   useGetInfiniteGamesQuery,
-  useGetOneGameQuery,
 } from "components/store/api/rawg-api";
 import { Card, Row, Col, Spin, Typography } from "antd";
 import { StarFilled } from "@ant-design/icons";
 import { useState } from "react";
-import styles from "./game-list.module.scss";
+import styles from "./popular-games.module.scss";
 import Link from "next/link";
 import { formatedDate } from "components/utils/functions";
-import localFont from 'next/font/local';
-import ReleaseDate from "../ReleaseDate/ReleaseDate";
 
-const ChaletComprime = localFont({
-  src: '../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
-});
-
-export const GameList = () => {
+export const PopularGames = () => {
   const [page, setPage] = useState(1);
   /* const { data, error, isLoading } = useGetGamesQuery({ page: 1, pageSize: 12 }); */
   const { data, error, isLoading } = useGetInfiniteGamesQuery({ page });

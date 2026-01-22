@@ -33,7 +33,7 @@
             color: #FFF;
             margin-left: 8px;
         }
-    }   
+    }
 }
 
 .logout_button{
@@ -45,11 +45,13 @@
 
 .space{
     cursor: pointer;
+    z-index: 11000 !important;
 }
 
 .dropdown ul{
     width: 106%;
     background-color: rgba(54, 54, 54, 0.815) !important;
+
 }
 
 .dropdown li:hover{

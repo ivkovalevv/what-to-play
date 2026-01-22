@@ -1,6 +1,7 @@
 import Signatire from "components/UI/Signature/Signature";
 import styles from "./footer.module.scss";
 import CircleLogo from 'components/UI/СircleLogo/CircleLogo';
+import Link from "next/link";
 
 const Footer = () => {
     return (
@@ -13,8 +14,12 @@ const Footer = () => {
                             <div className={styles.footer__content}>
                                 <p className={styles.footer__content_heading}>Sitemap</p>
                                 <ul className={styles.footer__content_list}>
-                                    <li className={styles.footer__content_list_item}>Home</li>
-                                    <li className={styles.footer__content_list_item}>Games List</li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <Link href="/">Home</Link>
+                                    </li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <Link href="/profile">Profile</Link>
+                                    </li>
                                     <li className={styles.footer__content_list_item}>Gaming senter</li>
                                     <li className={styles.footer__content_list_item}>Contacts us</li>
                                 </ul>
@@ -32,17 +37,29 @@ const Footer = () => {
                             <div className={styles.footer__content}>
                                 <p className={`${styles.footer__content_heading} ${styles.footer__content_heading_special}`}>Contacts</p>
                                 <ul className={`${styles.footer__content_list} ${styles.footer__content_list_special}`}>
-                                    <li className={styles.footer__content_list_item}>8 (915) 104-90-60</li>
-                                    <li className={styles.footer__content_list_item}>ivkovalevv@gmail.com</li>
-                                    <li className={styles.footer__content_list_item}>info@what-to-play.ru</li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <a href="tel:+79151049060">8 (915) 104-90-60</a>
+                                    </li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <a href="mailto:ivkovalevv@gmail.com">ivkovalevv@gmail.com</a>
+                                    </li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <a href="mailto:ivkovalevv@yandex.ru">ivkovalevv@yandex.ru</a>
+                                    </li>
                                 </ul>
                             </div>
                             <div className={styles.footer__content}>
                                 <p className={`${styles.footer__content_heading} ${styles.footer__content_heading_special}`}>Socials</p>
                                 <ul className={`${styles.footer__content_list} ${styles.footer__content_list_special}`}>
-                                    <li className={styles.footer__content_list_item}>Github</li>
-                                    <li className={styles.footer__content_list_item}>Telegram</li>
-                                    <li className={styles.footer__content_list_item}>WhatsApp</li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <a href="https://github.com/ivkovalevv" target="_blank">Github</a>
+                                    </li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <a href="https://t.me/x_kovalev" target="_blank">Telegram</a>
+                                    </li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <a href="https://wa.me/79151049060" target="_blank">WhatsApp</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

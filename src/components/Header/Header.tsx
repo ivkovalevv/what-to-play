@@ -15,7 +15,7 @@ const Header = () => {
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', checkVisibilityHeader)
+        window.addEventListener('scroll', checkVisibilityHeader);
     }, []);
 
     return (

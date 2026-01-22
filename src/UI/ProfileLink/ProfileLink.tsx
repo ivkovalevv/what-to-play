@@ -19,6 +19,7 @@ const ProfileLink = (props: ProfileLinkProps) => {
     const { Text } = Typography;
     const dispatch = useAppDispatch();
     const [isMounted, setIsMounted] = useState(false);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
@@ -26,6 +27,14 @@ const ProfileLink = (props: ProfileLinkProps) => {
 
     const handleLogout = () => {
         dispatch(logout());
+    }
+
+    const handleOpenChange = (info: boolean) => {
+        setOpen(info);
+        
+        window.addEventListener('scroll', () => {
+            setOpen(false);
+        });
     }
 
     const items: MenuProps['items'] = [
@@ -55,7 +64,7 @@ const ProfileLink = (props: ProfileLinkProps) => {
     return (
         <>
             {props.userName ? (
-                <Dropdown menu={{ items }} trigger={['click']} overlayClassName={styles.dropdown}>
+                <Dropdown menu={{ items }} onOpenChange={handleOpenChange} open={open} trigger={['click']} overlayClassName={styles.dropdown}>
                     <a onClick={(e) => e.preventDefault()}>
                     <Space className={styles.space}>
                         <Avatar className={styles.profile__link_icon} size={40} src={props.userAvatar}/>

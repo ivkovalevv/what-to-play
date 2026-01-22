@@ -55,7 +55,16 @@
         &_list{
 
             &_item{
+                width: fit-content;
                 margin-bottom: 10px;
+
+                & a{
+                    transition: color .3s ease;
+                }
+
+                &:hover a{
+                    color: $primary-hover-color;
+                }
             }
         }
 

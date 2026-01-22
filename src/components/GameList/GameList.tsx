@@ -33,7 +33,7 @@ export const GameList = () => {
   if (error) return <Text type="danger">An error has occurred!</Text>;
 
   return (
-    <section id="game-list" className={styles.popular}>
+    <section id="popular-games" className={styles.popular}>
       <div className={`container ${styles.game_list__container}`}>
         <h2 className={styles.heading}>Popular Games</h2>
         <Row gutter={[16, 16]}>

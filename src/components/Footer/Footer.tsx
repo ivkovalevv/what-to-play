@@ -20,16 +20,23 @@ const Footer = () => {
                                     <li className={styles.footer__content_list_item}>
                                         <Link href="/profile">Profile</Link>
                                     </li>
-                                    <li className={styles.footer__content_list_item}>Gaming senter</li>
-                                    <li className={styles.footer__content_list_item}>Contacts us</li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <Link href="/#popular-games">Popular games</Link>
+                                    </li>
                                 </ul>
                             </div>
                             <div className={styles.footer__content}>
                                 <p className={styles.footer__content_heading}>Company</p>
                                 <ul className={styles.footer__content_list}>
-                                    <li className={styles.footer__content_list_item}>Licensing</li>
-                                    <li className={styles.footer__content_list_item}>Cookie Policy</li>
-                                    <li className={styles.footer__content_list_item}>Privacy Policy</li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <Link href="/about-us">About us</Link>
+                                    </li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <Link href="/cooperation">Cooperation</Link>
+                                    </li>
+                                    <li className={styles.footer__content_list_item}>
+                                        <Link href="/privacy-policy">Privacy Policy</Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

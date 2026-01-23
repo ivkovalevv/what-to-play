@@ -12,9 +12,11 @@ export const favoritesSlice = createSlice({
        toggleFavorites: (state, action) => {
             const game = action.payload;
             const isExist = state.some(item => item.id === game.id);
+            console.log(isExist)
 
             if(isExist){
-                state = state.filter(item => item.id !== game.id)
+                state = state.filter(item => item.id !== game.id);
+                console.log(state)
             } else {
                 state.push(game);
             }

@@ -67,6 +67,10 @@
         align-items: center;
         justify-content: center;
 
+        &_active svg{
+            fill: $red-color !important;
+        }
+
         &:hover{
             background-color: $cards-background-color !important;
             border: 1px solid $cards-background-color !important;

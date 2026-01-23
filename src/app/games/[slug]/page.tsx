@@ -14,6 +14,8 @@ import Developers from "components/components/Devepolers/Developers";
 import Ratings from "components/components/Ratings/Ratings";
 import ReleaseDate from "components/components/ReleaseDate/ReleaseDate";
 import Description from "components/components/Description/Description";
+import { useAppDispatch, useAppSelector } from "components/store/hooks";
+import { toggleFavorites } from "components/store/slices/favorites.slice";
 
 const ChaletComprime = localFont({
   src: '../../../fonts/ChaletComprime/ChaletComprime-CologneSixty.ttf',
@@ -22,6 +24,8 @@ const ChaletComprime = localFont({
 export default function GamePage() {
   const params = useParams();
   const { slug } = params;
+  const favorites = useAppSelector((state) => state.favorites);
+  const dispatch = useAppDispatch();
 
   const {
     data: game,
@@ -34,6 +38,11 @@ export default function GamePage() {
     isLoading: isLoadingScreenshots, 
     error: errorScreenshots,
   } = useGetScreenshotsOneGameQuery({ slug: String(slug) });
+
+  function handleFavorites(){
+    dispatch(toggleFavorites(game));
+    console.log(favorites)
+  };
 
   if (isLoading)
     return (
@@ -97,7 +106,7 @@ export default function GamePage() {
             </div>
             <div className={styles.game__slider_wrapper}>
                 <div className={styles.game__slider_actions}>
-                  <Button className={styles.game__slider_like_button}>
+                  <Button className={`${styles.game__slider_like_button} ${favorites.some(item => item.id === game.id) && styles.game__slider_like_button_active}`} onClick={handleFavorites}>
                     <HeartFilled className={styles.game__slider_like_icon}/>
                   </Button>
                   <Button className={styles.game__slider_button} href={game.website} target="_blank">

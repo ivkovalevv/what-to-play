@@ -28,7 +28,7 @@
         font-size: 48px;
     }
 
-    &__slider_wrapper{
+    &__slider_container{
         position: relative;
         max-width: 100%;
         overflow: hidden;
@@ -67,6 +67,10 @@
         align-items: center;
         justify-content: center;
 
+        &_active{
+            animation: clickLike .3s ease;
+        }
+
         &_active svg{
             fill: $red-color !important;
         }
@@ -74,10 +78,6 @@
         &:hover{
             background-color: $cards-background-color !important;
             border: 1px solid $cards-background-color !important;
-        }
-
-        &:hover svg{
-            fill: $red-color !important;
         }
     }
 
@@ -133,5 +133,19 @@
         &:hover * {
             color: $primary-hover-color;
         }
+    }
+}
+
+@keyframes clickLike {
+    0% {
+        transform: scale(0.6);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }

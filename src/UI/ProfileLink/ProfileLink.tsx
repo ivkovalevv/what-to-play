@@ -9,6 +9,7 @@ import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 import { useAppDispatch } from '../../store/hooks';
 import { logout } from '../../store/slices/auth.slice';
+import { usePathname } from "next/navigation";
 
 interface ProfileLinkProps {
     userName?: string;
@@ -20,6 +21,7 @@ const ProfileLink = (props: ProfileLinkProps) => {
     const dispatch = useAppDispatch();
     const [isMounted, setIsMounted] = useState(false);
     const [open, setOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         setIsMounted(true);
@@ -59,6 +61,10 @@ const ProfileLink = (props: ProfileLinkProps) => {
                 <Text className={styles.profile__link_name}>Login</Text>
             </Link>
         );
+    }
+
+    if(pathname === '/auth'){
+        return null;
     }
 
     return (

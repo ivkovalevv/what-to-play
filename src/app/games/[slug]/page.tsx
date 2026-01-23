@@ -103,9 +103,12 @@ export default function GamePage() {
               <Platforms gameName={game.name} platforms={game.platforms}/>
               <ReleaseDate releaseDate={game.released}/>
             </div>
-            <div className={styles.game__slider_wrapper}>
+            <div className={styles.game__slider_container}>
                 <div className={styles.game__slider_actions}>
-                  <Button className={`${styles.game__slider_like_button} ${favorites.some(item => item.id === game.id) && styles.game__slider_like_button_active}`} onClick={handleFavorites}>
+                  <Button 
+                    className={`${styles.game__slider_like_button} ${favorites.some(item => item.id === game.id) && styles.game__slider_like_button_active}`} 
+                    onClick={handleFavorites}
+                    title={favorites.some(item => item.id === game.id)? "remove from favorite": "add to favorite"}>
                     <HeartFilled className={styles.game__slider_like_icon}/>
                   </Button>
                   <Button className={styles.game__slider_button} href={game.website} target="_blank">
@@ -113,7 +116,7 @@ export default function GamePage() {
                     <ArrowRightOutlined className={styles.game__slider_button_icon}/>
                   </Button>
                 </div>
-                <ImageSlider screenshots={screenshots}/>
+              <ImageSlider screenshots={screenshots}/>
             </div>
           </div>
       </div>

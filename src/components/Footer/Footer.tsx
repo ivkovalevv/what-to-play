@@ -1,9 +1,18 @@
+'use client';
+
 import Signatire from "components/UI/Signature/Signature";
 import styles from "./footer.module.scss";
 import CircleLogo from 'components/UI/СircleLogo/CircleLogo';
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+    const pathname = usePathname();
+
+    if(pathname === '/auth'){
+        return null;
+    }
+
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__overlay}>

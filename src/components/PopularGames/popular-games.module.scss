@@ -25,6 +25,7 @@
     border: none;
     overflow: hidden;
     transition: transform .2s ease;
+    position: relative;
 
     &-title *{
         color: $white-color !important;
@@ -69,6 +70,16 @@
 
     &__star *{
         color: rgb(219 196 20) !important;
+    }
+
+    &__like{
+       margin-left: auto;
+    }
+
+    &__like svg{
+        width: 25px;
+        height: 25px;
+        fill: $red-color;
     }
 }
 

@@ -5,16 +5,18 @@ import {
   useGetInfiniteGamesQuery,
 } from "components/store/api/rawg-api";
 import { Card, Row, Col, Spin, Typography } from "antd";
-import { StarFilled } from "@ant-design/icons";
+import { HeartFilled, StarFilled } from "@ant-design/icons";
 import { useState } from "react";
 import styles from "./popular-games.module.scss";
 import Link from "next/link";
 import { formatedDate } from "components/utils/functions";
+import { useAppSelector } from "components/store/hooks";
 
 export const PopularGames = () => {
   const [page, setPage] = useState(1);
   /* const { data, error, isLoading } = useGetGamesQuery({ page: 1, pageSize: 12 }); */
   const { data, error, isLoading } = useGetInfiniteGamesQuery({ page });
+  const favorites = useAppSelector((state) => state.favorites);
 
   const { Text } = Typography;
 
@@ -32,7 +34,7 @@ export const PopularGames = () => {
         <Row gutter={[16, 16]}>
           {data?.results.map((game) => (
             <Col key={game.id} xs={24} sm={12} md={8} lg={6}>
-              <Link href={`/games/${game.slug}`} className={styles.cardLink}>
+              <Link href={`/games/${game.slug}`} className={styles.card__link}>
                 <Card
                   className={styles.card}
                   hoverable
@@ -54,6 +56,9 @@ export const PopularGames = () => {
                           <StarFilled className={styles.card__star} />{" "}
                           <p>{game.rating}</p>
                         </div>
+                        {
+                            favorites.some(item => item.id === game.id) && <HeartFilled className={styles.card__like}/>
+                          }
                       </div>
                     }
                   />

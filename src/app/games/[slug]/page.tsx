@@ -41,7 +41,6 @@ export default function GamePage() {
 
   function handleFavorites(){
     dispatch(toggleFavorites(game));
-    console.log(favorites)
   };
 
   if (isLoading)

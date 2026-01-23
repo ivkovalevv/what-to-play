@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { initializeAuth } from '../../store/slices/authSlice';
+import { initializeAuth } from '../../store/slices/auth.slice';
 
 const AuthInitializer = () => {
   const dispatch = useDispatch();

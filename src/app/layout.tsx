@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={notoSansFont.className}>
         <ReduxProvider>
           <AuthInitializer/>
-          <Header />
+          <Header/>
           {children}
           <Footer/>
         </ReduxProvider>

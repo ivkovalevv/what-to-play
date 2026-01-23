@@ -8,7 +8,7 @@ import styles from "./auth-form.module.scss";
 import Image from "next/image";
 import { generateRandomCode, validateEmail } from "components/utils/functions";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { login } from "../../store/slices/authSlice";
+import { login } from "../../store/slices/auth.slice";
 import { useRouter } from "next/navigation";
 
 const CODE_LENGTH = 6;

@@ -8,7 +8,7 @@ import Link from 'next/link';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 import { useAppDispatch } from '../../store/hooks';
-import { logout } from '../../store/slices/authSlice';
+import { logout } from '../../store/slices/auth.slice';
 
 interface ProfileLinkProps {
     userName?: string;

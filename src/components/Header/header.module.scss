@@ -1,8 +1,8 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables" as *;
 
 .header{
     width: 100%;
-    height: clamp(3.125rem, 2.7025rem + 2.1127vw, 5rem); /* 80px > 50px */
+    @include fluid(height, 80, 50);
     position: fixed;
     z-index: 1000;
     top: 0px;
@@ -47,7 +47,7 @@
         backdrop-filter: blur(7px);
         border-radius: 50px;
         width: 70%;
-        height: clamp(3.125rem, 2.8433rem + 1.4085vw, 4.375rem); /* 70px > 50px */
+        @include fluid(height, 70, 50);
         margin-top: 10px;
         border: 1px solid rgba(73, 73, 73, 0.65);
 

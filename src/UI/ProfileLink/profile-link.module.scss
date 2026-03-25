@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables" as *;
 
 .profile{
     &__link{
@@ -7,8 +7,8 @@
         cursor: pointer;
 
         &_icon{
-            width: clamp(1.875rem, 1.7342rem + 0.7042vw, 2.5rem); /* 40px > 30px */
-            height: clamp(1.875rem, 1.7342rem + 0.7042vw, 2.5rem); /* 40px > 30px */
+            @include fluid(width, 40, 30);
+            @include fluid(height, 40, 30);
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -33,7 +33,7 @@
             font-family: 'Noto Sans', 'Noto Sans Fallback' !important;
             font-size: 14px !important;
             color: #FFF;
-            margin-left: clamp(0.25rem, 0.1937rem + 0.2817vw, 0.5rem); /* 8px > 4px */
+            @include fluid(margin-left, 8, 4);
             white-space: nowrap;
 
             @media(max-width: 425px){

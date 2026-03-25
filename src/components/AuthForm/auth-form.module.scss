@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables" as *;
 
 .form_wrapper{
     position: relative;

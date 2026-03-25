@@ -5,7 +5,7 @@ import {
   useGetInfiniteGamesQuery,
 } from "components/store/api/rawg-api";
 import { Card, Row, Col, Spin, Typography } from "antd";
-import { HeartFilled, StarFilled } from "@ant-design/icons";
+import { HeartFilled, StarFilled, LoadingOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import styles from "./popular-games.module.scss";
 import Link from "next/link";
@@ -24,8 +24,21 @@ export const PopularGames = () => {
     setPage((prev) => prev + 1);
   };
 
-  if (isLoading) return <Spin size="large" />;
-  if (error) return <Text type="danger">An error has occurred!</Text>;
+  if (isLoading) return (
+    <section id="popular-games" className={styles.popular}>
+      <div className={`container ${styles.game_list__container}`}>
+        <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
+      </div>
+    </section>
+  )
+
+  if (error) return (
+    <section id="popular-games" className={styles.popular}>
+      <div className={`container ${styles.game_list__container}`}>
+        <Text type="danger">An error has occurred!</Text>
+      </div>
+    </section>
+  )
 
   return (
     <section id="popular-games" className={styles.popular}>

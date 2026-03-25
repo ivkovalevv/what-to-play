@@ -3,32 +3,38 @@
 .wrapper{
     display: flex;
     align-items: center;
-    margin-right: 150px;
 }
 
 .logo{
-    max-width: 55px;
-    max-height: 55px;
+    max-width: clamp(2.5rem, 2.2887rem + 1.0563vw, 3.4375rem); /* 55px > 40px */
+    max-height: clamp(2.5rem, 2.2887rem + 1.0563vw, 3.4375rem); /* 55px > 40px */
     margin-right: 10px;
+
+    @media (max-width: 425px) {
+        display: none;
+    }
 }
 
 .heading{
     display: flex;
     align-items: center;
-    font-size: 28px;
+    font-size: clamp(1rem, 0.831rem + 0.8451vw, 1.75rem); /* 28px > 16px */
     font-weight: 500;
     transform: translateY(2px);
     text-wrap: nowrap;
     margin: 0px;
     margin-right: 10px;
+
+    @media(max-width: 425px){
+        margin-left: 8px;
+    }
 }
 
 .plusWrapper{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: clamp(1.5625rem, 1.4639rem + 0.493vw, 2rem); /* 32px > 25px */
     transition: transform .3s ease;
     transform-origin: center center;
     animation: logo-animation 12s ease infinite;
@@ -37,7 +43,7 @@
 .plus{
     width: 100%;
     text-align: center;
-    font-size: 38px;
+    font-size: clamp(1.5625rem, 1.3794rem + 0.9155vw, 2.375rem); /* 38px > 25px */
     font-weight: 800;
     letter-spacing: 0px;
     line-height: 0.4;

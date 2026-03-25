@@ -73,17 +73,17 @@ const ProfileLink = (props: ProfileLinkProps) => {
                 <Dropdown menu={{ items }} onOpenChange={handleOpenChange} open={open} trigger={['click']} overlayClassName={styles.dropdown}>
                     <a onClick={(e) => e.preventDefault()}>
                     <Space className={styles.space}>
-                        <Avatar className={styles.profile__link_icon} size={40} src={props.userAvatar}/>
-                        {props.userName}
+                        <Avatar className={styles.profile__link_icon} src={props.userAvatar}/>
+                        <Text className={styles.profile__link_name}>{props.userName}</Text>
                     </Space>
                     </a>
                 </Dropdown>
             ) : (
                 <Link href="/auth" className={styles.profile__link}>
                     {props.userAvatar ? (
-                        <Avatar className={styles.profile__link_icon} size={40} src={props.userAvatar} />
+                        <Avatar className={styles.profile__link_icon} src={props.userAvatar} />
                     ) : (
-                        <Avatar className={styles.profile__link_icon} size={40} icon={<UserOutlined />} />
+                        <Avatar className={styles.profile__link_icon} icon={<UserOutlined />} />
                     )}
                     <Text className={styles.profile__link_name}>{props.userName || 'Login'}</Text>
                 </Link>

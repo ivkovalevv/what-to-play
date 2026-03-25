@@ -7,6 +7,8 @@
         cursor: pointer;
 
         &_icon{
+            width: clamp(1.875rem, 1.7342rem + 0.7042vw, 2.5rem); /* 40px > 30px */
+            height: clamp(1.875rem, 1.7342rem + 0.7042vw, 2.5rem); /* 40px > 30px */
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -31,7 +33,12 @@
             font-family: 'Noto Sans', 'Noto Sans Fallback' !important;
             font-size: 14px !important;
             color: #FFF;
-            margin-left: 8px;
+            margin-left: clamp(0.25rem, 0.1937rem + 0.2817vw, 0.5rem); /* 8px > 4px */
+            white-space: nowrap;
+
+            @media(max-width: 425px){
+                display: none;
+            }
         }
     }
 }
@@ -46,6 +53,7 @@
 .space{
     cursor: pointer;
     z-index: 11000 !important;
+    column-gap: 0px !important;
 }
 
 .dropdown ul{

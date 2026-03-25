@@ -48,8 +48,8 @@ $hero-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 100
 }
 
 @mixin fluid($property, $max, $min, $min-width: 320, $max-width: 1740){
-    $slope: math.div($max - $min, $max-width - $min-width);
-    $intercept: $min - $slope * $min-width;
-    $preferred: string.unquote("#{math.div($intercept, 16)}rem + #{$slope * 100}vw");
+    $slope: math.div($max - $min, $max-width - $min-width); // на каждый 1px ширины экрана значение увеличивается/уменьшается на slope
+    $intercept: $min - $slope * $min-width; // это значение в пикселях при ширине экрана 0px
+    $preferred: string.unquote("#{math.div($intercept, 16)}rem + #{$slope * 100}vw"); // это формула линейного изменения значения между $min и $max в зависимости от ширины окна, выраженная в rem + vw
     #{$property}: clamp(rem($min), #{$preferred}, rem($max));
 }

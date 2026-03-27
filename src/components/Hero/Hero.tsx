@@ -17,7 +17,7 @@ const Hero = () => {
             <div className={`container ${styles.hero__сontainer}`}>
                 {<div className={styles.hero__сontent}>
                     <p className={styles.hero__intro}>BEST GAME STORE</p>
-                    <h1 className={`${styles.hero__title} ${stackSansNotchFont.className}`}>Your Next Game is Here</h1>
+                    <h1 className={`${styles.hero__title} ${stackSansNotchFont.className}`}>Your Next Game is&nbsp;Here</h1>
                     <p className={styles.hero__description}>Find your perfect match. Compare the ratings.<br/> Make a decision in a matter of seconds.</p>
                     <Button className={styles.hero__button} href="#popular-games">Get Started</Button>
                 </div>}

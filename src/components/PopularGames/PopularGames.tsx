@@ -44,7 +44,7 @@ export const PopularGames = () => {
     <section id="popular-games" className={styles.popular}>
       <div className={`container ${styles.game_list__container}`}>
         <h2 className={styles.heading}>Popular Games</h2>
-        <Row gutter={[16, 16]}>
+        <Row gutter={[16, 16]} className={styles.popular__row}>
           {data?.results.map((game) => (
             <Col key={game.id} xs={24} sm={12} md={8} lg={6}>
               <Link href={`/games/${game.slug}`} className={styles.card__link}>
@@ -55,7 +55,7 @@ export const PopularGames = () => {
                     <img
                       alt={game.name}
                       src={game.background_image}
-                      style={{ height: 280, objectFit: "cover" }}
+                      className={styles.card__img}
                     />
                   }
                 >
@@ -64,7 +64,7 @@ export const PopularGames = () => {
                     title={game.name}
                     description={
                       <div className={styles.card__content}>
-                        <p>{`Release date: ${formatedDate(game.released)}ㅤ|ㅤ`}</p>
+                        <p>{`Release date: ${formatedDate(game.released)}`}</p>
                         <div className={styles.card__star_wrapper}>
                           <StarFilled className={styles.card__star} />{" "}
                           <p>{game.rating}</p>

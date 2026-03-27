@@ -42,7 +42,6 @@
     &__сontainer{
         position: relative;
         z-index: 2;
-        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -100,11 +99,5 @@
             -moz-box-shadow: 0px 14px 27px 10px rgba(143, 79, 233, 0.2);
             box-shadow: 0px 14px 27px 10px rgba(143, 79, 233, 0.2) !important;
         }
-    }
-}
-
-@media (max-width: 425px){
-    .hero{
-        max-height: 700px;
     }
 }

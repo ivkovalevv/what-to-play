@@ -35,8 +35,8 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div className={styles.footer__content}>
-                                <p className={styles.footer__content_heading}>Company</p>
-                                <ul className={styles.footer__content_list}>
+                                <p className={`${styles.footer__content_heading} ${styles.footer__content_heading_mobile_special}`}>Company</p>
+                                <ul className={`${styles.footer__content_list} ${styles.footer__content_list_mobile_special}`}>
                                     <li className={styles.footer__content_list_item}>
                                         <Link href="/about-us">About us</Link>
                                     </li>
@@ -65,8 +65,8 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div className={styles.footer__content}>
-                                <p className={`${styles.footer__content_heading} ${styles.footer__content_heading_special}`}>Socials</p>
-                                <ul className={`${styles.footer__content_list} ${styles.footer__content_list_special}`}>
+                                <p className={`${styles.footer__content_heading} ${styles.footer__content_heading_special} ${styles.footer__content_heading_mobile_special}`}>Socials</p>
+                                <ul className={`${styles.footer__content_list} ${styles.footer__content_list_special} ${styles.footer__content_list_mobile_special}`}>
                                     <li className={styles.footer__content_list_item}>
                                         <a href="https://github.com/ivkovalevv" target="_blank">Github</a>
                                     </li>

@@ -2,19 +2,13 @@
 
 .signature{
     color: $text-color;
-    font-size: 18px;
+    @include fluid(font-size, 18, 16);
     margin: 30px 0px 0px 0px;
     text-align: center;
     width: fit-content;
     display: block;
-    color: #5f5f5f;;
+    color: #5f5f5f;
     font-variant-caps: all-small-caps;
-    /* margin: auto auto 0px auto;
-    background-color: #ffffff17;
-    backdrop-filter: blur(7px);
-    padding: 10px 40px;
-    border-radius: $base-border-radius;
-    border: 1px solid $border-color; */
 
     &__wrapper{
         width: 100%;
@@ -31,5 +25,11 @@
         border-bottom: 1px solid $primary-color;
         color: $primary-color;
         margin: 0 5px;
+    }
+
+    @media(max-width: 768px){
+        color: $white-color;
+        font-weight: 200;
+        filter: drop-shadow(0px 0px 4px $black-color);
     }
 }

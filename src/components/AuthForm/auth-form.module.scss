@@ -5,8 +5,8 @@
     width: 90%;
     max-width: 440px;
     height: fit-content;
-    padding: clamp(.75rem, .3929rem + 1.7857vw, 2rem);
-    border-radius: 16px;
+    @include fluid(padding, 30, 15);
+    border-radius: $base-border-radius;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,14 +17,22 @@
     backdrop-filter: blur(13px);
 
     &__heading{
-        font-size: 28px;
+        @include fluid(font-size, 30, 20);
         color: $white-color;
         text-align: center;
         font-weight: 300;
-        margin-bottom: 20px;
+    }
+
+    &__description{
+        @include fluid(font-size, 18, 16);
+        color: $white-ghost-color;
+        text-align: center;
+        font-weight: 300;
+        margin-top: 8px;
     }
 
     &__logo{
+        @include fluid((width, height), 200, 100);
         margin: 0 auto;
     }
 }
@@ -32,15 +40,22 @@
 .input_groupe{
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .form{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    & div{
+        @include fluid(gap, 16, 8);
+    }
 
     &__input{
-        font-size: 18px;
-        padding: 10px 16px;
+        @include fluid(font-size, 18, 14);
+        @include fluid((padding-left, padding-right), 16, 10);
+        @include fluid((padding-top, padding-bottom), 10, 5);
         background: #ffffffd5 !important;
 
         &:hover{
@@ -57,21 +72,21 @@
     }
 
     &__input_invalid{
+        @include fluid(font-size, 18, 14);
         color: red;
-        margin-top: 5px;
-        margin-bottom: 0px;
+        margin: 0px;
     }
 
     &__input_icon *{
         color: $light-grey-color;
-        font-size: 18px;
+        @include fluid(font-size, 18, 14);
         margin-inline-end: 4px;
     }
 
     &__button{
-        height: 50px;
+        @include fluid(height, 50, 35);
         background-color: $primary-color;
-        font-size: 20px;
+        @include fluid(font-size, 20, 16);
         font-weight: 500;
 
         &:hover{
@@ -112,8 +127,8 @@
 }
 
 .form_wrapper :global(.ant-otp-input){
-    min-height: clamp(2.8125rem, 2.5446rem + 1.3393vw, 3.75rem); /* 60px > 45px */
-    font-size: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem) !important; /* 24px > 16px */
+    @include fluid(min-height, 60, 40);
+    @include fluid(font-size, 18, 14);
     font-weight: 600;
 
     &:hover{

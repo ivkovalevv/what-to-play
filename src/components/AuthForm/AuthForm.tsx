@@ -127,25 +127,33 @@ const AuthForm = () => {
         className={styles.form_wrapper__logo}
         alt="logo"
       />
-      <p className={styles.form_wrapper__heading}>
-        {code
-          ? "Check your email address and enter the code you sent"
-          : "Enter your email address to continue"}
-      </p>
+      {code 
+        ? (
+          <>
+            <p className={styles.form_wrapper__heading}>{"Check your email"}</p>
+            <p className={styles.form_wrapper__description}>{`We sent a 6-digit code to ${formData.email}`}</p>
+          </>
+        )
+        : (
+          <p className={styles.form_wrapper__heading}>{"Enter your email to get a verification code"}</p>
+        )
+      }
 
       <form className={styles.form} onSubmit={code ? handleLogin : sendEmail}>
         <Flex vertical gap="middle" style={{ width: "100%" }}>
           <div className={styles.input_groupe}>
-            <Input
-              name="email"
-              placeholder="Email"
-              prefix={<UserOutlined className={styles.form__input_icon} />}
-              value={formData.email}
-              status={isEmailInvalid && "error"}
-              onChange={handleChangeEmail}
-              className={styles.form__input}
-              disabled={isLodaing || code !== ""}
-            />
+            {!code &&(
+              <Input
+                name="email"
+                placeholder="Email"
+                prefix={<UserOutlined className={styles.form__input_icon} />}
+                value={formData.email}
+                status={isEmailInvalid && "error"}
+                onChange={handleChangeEmail}
+                className={styles.form__input}
+                disabled={isLodaing || code !== ""}
+              />
+            )}
             {code && (
               <Input.OTP
                 value={formData.code.join("")}
@@ -183,7 +191,7 @@ const AuthForm = () => {
             ) : code !== "" ? (
               "Login"
             ) : (
-              "Next"
+              "Send code"
             )}
           </Button>
         </Flex>
